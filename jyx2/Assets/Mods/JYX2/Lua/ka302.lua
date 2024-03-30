@@ -1,5 +1,5 @@
 if InTeam(29) == false then goto label0 end;
-    Talk(28, "田伯光！你这恶贼，我跟你拼了！", "talkname28", 0);
+    Talk(28, "전백광！ 이 나쁜 놈！ 살려두지 않겠다！", "talkname28", 0);
     if TryBattle(52) == true then goto label1 end;
         Dead();
         do return end;
@@ -10,6 +10,6 @@ if InTeam(29) == false then goto label0 end;
         AddEthics(-5);
         do return end;
 ::label0::
-        Talk(28, "你还在这做什么？", "talkname28", 0);
-        Talk(0, "没事逛逛。", "talkname0", 1);
+        Talk(28, "왜 안가고 있지？", "talkname28", 0);
+        Talk(0, "할 일 없이 돌아다니는 중입니다。", "talkname0", 1);
 do return end;

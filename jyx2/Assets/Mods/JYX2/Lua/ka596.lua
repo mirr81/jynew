@@ -1,4 +1,4 @@
-Talk(91, "小子，竟敢擅闯我大轮寺，找死！", "talkname91", 0);
+Talk(91, "이 녀석，감히 내 대륜사에 함부로 뛰어들어 죽으려고 하다니！", "talkname91", 0);
 if TryBattle(92) == true then goto label0 end;
     Dead();
     do return end;

@@ -1,4 +1,4 @@
-Talk(0, "看来，我是来到蜘蛛精的巢穴了。", "talkname0", 1);
+Talk(0, "보아하니 거미 소굴로 들어온 것 같구나。", "talkname0", 1);
 if TryBattle(61) == true then goto label0 end;
     Dead();
     do return end;

@@ -347,6 +347,7 @@ namespace Jyx2
         Book = 2, //经书
         Costa = 3, //消耗品
         Anqi = 4, //暗器
+        Page = 5, //经书
     }
 
     /// <summary>
@@ -360,7 +361,7 @@ namespace Jyx2
         //物品说明
         string Desc {get;set;}
         //物品类型
-        //道具 = 0, 装备 = 1, 经书 = 2, 消耗品 = 3, 暗器 = 4,
+        //道具 = 0, 장비 = 1, 비급 = 2, 소모품 = 3, 암기 = 4, 양피지 = 5
         int ItemType {get;set;}
         //装备类型
         //不是装备 = -1, 武器 = 0, 防具 = 1
@@ -568,7 +569,7 @@ namespace Jyx2
         {
             LEnv = LuaManager.GetLuaEnv();
             List<string> ConfigList = LEnv.Global.GetInPath<List<string>>("Jyx2.ConfigMgr.ConfigList");
-            if (ConfigList == null) return;
+            if (ConfigList == null) return;  
 
             CharacterTable = LEnv.Global.GetInPath<Dictionary<int, LRoleConfig>>("Jyx2.ConfigMgr.Character");
             SkillTable = LEnv.Global.GetInPath<Dictionary<int, LSkillConfig>>("Jyx2.ConfigMgr.Skill");
@@ -578,6 +579,7 @@ namespace Jyx2
             MapTable = LEnv.Global.GetInPath<Dictionary<int, LMapConfig>>("Jyx2.ConfigMgr.Map");
             ShopTable = LEnv.Global.GetInPath<Dictionary<int, LShopConfig>>("Jyx2.ConfigMgr.Shop");
             SettingsTable = LEnv.Global.GetInPath<Dictionary<int, LSettingsConfig>>("Jyx2.ConfigMgr.Settings");
+
 
             TestMethod();
         }

@@ -1,9 +1,9 @@
-Talk(13, "少侠准备好要破我明教之“光明圣火阵”了吗？", "talkname13", 0);
+Talk(13, "애송아， 도전할 준비가 되었느냐？", "talkname13", 0);
 if AskBattle() == true then goto label0 end;
-    Talk(0, "我还没准备好。", "talkname0", 1);
+    Talk(0, "전 아직 준비가 되지 않았습니다。", "talkname0", 1);
     do return end;
 ::label0::
-    Talk(0, "我准备好了，还请各位前辈高抬贵手。", "talkname0", 1);
+    Talk(0, "준비됐습니다。 어서 출수하시죠！", "talkname0", 1);
     SetOneMagic(10, 0, 10, 900);
     SetOneMagic(11, 0, 50, 900);
     SetOneMagic(12, 0, 9, 900);
@@ -19,7 +19,7 @@ if AskBattle() == true then goto label0 end;
     AddHp(15, 200);
     if TryBattle(15) == true then goto label1 end;
         LightScence();
-        Talk(13, "小兄弟似乎需要再磨练。", "talkname13", 0);
+        Talk(13, "소형제는 좀 더 연마해야 할 것 같군。", "talkname13", 0);
         do return end;
 ::label1::
         ModifyEvent(-2, 102, 1, 1, 118, -1, -1, 5318, 5318, 5318, -2, -2, -2);
@@ -38,13 +38,13 @@ if AskBattle() == true then goto label0 end;
         jyx2_ReplaceSceneObject("", "NPC/杨逍104", "1");--杨逍在圣火阵出现
         jyx2_ReplaceSceneObject("", "NPC/韦一笑103", "1");--韦一笑圣火阵
         LightScence();
-        Talk(12, "果然是英雄出少年，我们这些老骨头都不行了。", "talkname12", 0);
-        Talk(14, "今后武林中，就是你们这些年轻人的天下了。", "talkname14", 0);
-        Talk(0, "是各位前辈承让了。", "talkname0", 1);
-        Talk(13, "就遵照我们的约定，《倚天屠龙记》一书该为少侠所有。", "talkname13", 0);
-        Talk(0, "谢谢各位前辈。在经过了这么多波折才拿到此书，虽说辛苦，但也从中学到不少东西。世上的好坏人真的很难去界定，名门正派的人，外表有羊皮披挂着，反倒是更容易去为恶。", "talkname0", 1);
-        Talk(10, "经过了这些，你的江湖历练又增长了不少。希望你在其它的旅途上也更能顺利。", "talkname10", 0);
-        Talk(0, "好了，我还要去忙别的了。有空我会再回来的。", "talkname0", 1);
+        Talk(12, "새로운 영웅의 탄생이야！ 우리는 이제 한 물 갔어。", "talkname12", 0);
+        Talk(14, "이제 무림은 자네 같은 젊은이들이 이끌어 나갈 걸세。", "talkname14", 0);
+        Talk(0, "양보해 주신 덕분이죠。", "talkname0", 1);
+        Talk(13, "신의를 지키겠네。 \"의천도룡기\"는 자네 소유야！", "talkname13", 0);
+        Talk(0, "고맙습니다！ 책을 얻기 위해 많은 고생을 했지만 역시 배운 것도 많았다。 정파인들은 겉으론 의롭게 보여도 본심은 이익을 위해 살인도 서슴지 않는… 강호는 역시 험난해…", "talkname0", 1);
+        Talk(10, "강호에서의 경험이 좋은 공부가 됐을 걸세。 앞날이 순조롭길 빌겠네。", "talkname10", 0);
+        Talk(0, "이만 떠나겠습니다。 다음에 다시 찾아오죠。", "talkname0", 1);
         AddItem(155, 1);
         AddRepute(10);
 do return end;

@@ -1,8 +1,8 @@
-Talk(0, "今天嵩山顶上似乎很热闹？", "talkname0", 1);
-Talk(84, "今日是我五岳剑派并派的大日子。闲杂人等，还请离去。", "talkname84", 0);
-Talk(0, "这样大的盛会，怎能少得了大爷我。快让让。", "talkname0", 1);
-Talk(84, "阁下再不离去，休怪我们不客气了。", "talkname84", 0);
-Talk(0, "我正有此意。", "talkname0", 1);
+Talk(0, "오늘 숭산의 봉우리가 왜 이렇게 시끄럽지？", "talkname0", 1);
+Talk(84, "오늘은 오악검파가 합병하는 날이다。 잡상인은 가거라！", "talkname84", 0);
+Talk(0, "그런 큰일에 내가 빠질 순 없지！ 비켜라！", "talkname0", 1);
+Talk(84, "가지 않으면 가만히 있지 않겠소。", "talkname84", 0);
+Talk(0, "맘대로 해봐라！", "talkname0", 1);
 if TryBattle(29) == true then goto label0 end;
     Dead();
     do return end;

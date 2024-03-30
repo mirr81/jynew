@@ -1,12 +1,12 @@
 ScenceFromTo(41, 31, 34, 31);
 jyx2_CameraFollow("Level/NPC/miaorenfeng");
-Talk(3, "你们是田归农请来的吧！神龙教何时跟田归农搭在一起了。", "talkname3", 0);
-Talk(97, "还多亏了田兄，我们才知道《飞狐外传》一书在你这。识相的话就快将书交出来。", "talkname97", 0);
-Talk(3, "田归农呢？他怎么不敢出来见我。", "talkname3", 0);
-Talk(97, "我看你是见不到他了。田兄从毒手药王那弄来的断肠草粉末，药效也真够狠。现下你双眼已瞎，我看“打遍天下无敌手”的金面佛苗人凤，今日要上西天了！兄弟们，上！", "talkname97", 0);
+Talk(3, "전귀농이 보냈나？ 언제부터 신룡교가 전귀농과 결탁했지？", "talkname3", 0);
+Talk(97, "전 형 덕분에 \"비호외전\"이 여기 있단 걸 알게 됐지。 후회하지 않으려면 어서 그 책을 내놔라！", "talkname97", 0);
+Talk(3, "전귀농？ 전귀농은 왜 얼굴을 내밀지 않지？", "talkname3", 0);
+Talk(97, "그를 못 만날 거다！ 독수약왕이 준 단장초의 약초가 정말 무섭군！ 천하무적 금불면 묘인봉이 장님이 됐으니 오늘이 네놈의 제삿날이다！ 모두 나서라！", "talkname97", 0);
 ScenceFromTo(34, 31, 41, 31);
 jyx2_CameraFollowPlayer();
-Talk(0, "苗大侠，我帮你拿贼。", "talkname0", 1);
+Talk(0, "묘 대협！ 제가 돕죠！", "talkname0", 1);
 if TryBattle(3) == true then goto label0 end;
     Dead();
     do return end;
@@ -26,19 +26,19 @@ if TryBattle(3) == true then goto label0 end;
     SetScencePosition2(35, 31);
 	jyx2_MovePlayer("afterBattle", "Level/Dynamic");
     LightScence();
-    Talk(3, "小兄弟，你尊姓大名，与我可有渊源？", "talkname3", 0);
-    Talk(0, "丈夫结交，但重义气，只需肝胆相照，何必提名道姓。", "talkname0", 1);
-    Talk(3, "好，苗人凤独来独往，生平只有两个知交，一个是辽东大侠胡一刀，另一个便是你这位不知姓名没见过面的小兄弟。", "talkname3", 0);
+    Talk(3, "소협은 누군데 나를 돕겠다고 나서는가！", "talkname3", 0);
+    Talk(0, "대장부는 협행을 베푸는 데 결코 이름 석 자를 밝히지 않는 법이오。", "talkname0", 1);
+    Talk(3, "좋다。 나 묘인봉에게 유일한 지기는 호일도와 지금 얼굴도 처음 보고 이름도 모르는 자네일세！", "talkname3", 0);
     if InTeam(1) == false then goto label1 end;
-        Talk(1, "你说什么。那你为何要杀死胡大侠。", "talkname1", 1);
-        Talk(3, "这说来话长……", "talkname3", 0);
-        Talk(0, "大哥，我们先想办法救苗大侠，这事以后再说。", "talkname0", 1);
+        Talk(1, "뭐라고？ 그런데 왜 호대협을 죽였소？", "talkname1", 1);
+        Talk(3, "얘기하자면 길다…", "talkname3", 0);
+        Talk(0, "먼저 묘대 협을 구한 다음 이 일에 대해 얘기하기로 하시죠。", "talkname0", 1);
 ::label1::
-        Talk(0, "苗大侠，既然这药是毒手药王所配制，那我们去求毒手药王救治，或能解得。", "talkname0", 1);
-        Talk(3, "要求毒手药王吗？那是徒劳往返，不用去了。", "talkname3", 0);
-        Talk(0, "不，天下无难事！这位毒手药王住在哪里？", "talkname0", 1);
-        Talk(3, "听说此人在洞庭湖畔隐居。", "talkname3", 0);
-        Talk(0, "我这就去了！", "talkname0", 1);
+        Talk(0, "묘 대협， 독수약왕이 만든 독이니 그를 찾아 치료하면 해독이 될 겁니다。", "talkname0", 1);
+        Talk(3, "독수약왕에게？ 공연히 헛수고만 할 뿐이다。", "talkname3", 0);
+        Talk(0, "해보지 않고서는 모르는 겁니다！ 독수약왕이 어디에 살고 있습니까？", "talkname0", 1);
+        Talk(3, "듣자하니 동정호에 은거하고 있다 하네。", "talkname3", 0);
+        Talk(0, "그럼 바로 다녀오겠습니다。", "talkname0", 1);
         SetScenceMap(49, 1, 28, 37, 0);--by fanyu  场景49-编号1，坐标的贴图改变，门移除
         SetScenceMap(49, 1, 27, 37, 3692);--by fanyu  场景49-编号1，坐标的贴图改变，门移除
         SetScenceMap(49, 1, 27, 36, 3694);--by fanyu  场景49-编号1，坐标的贴图改变，门移除

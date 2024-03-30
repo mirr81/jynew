@@ -1,5 +1,5 @@
-Talk(91, "小子，金轮寺暂时封寺，你要参观就到别处。", "talkname91", 0);
-Talk(0, "大爷我就爱到处逛逛，你们这些秃子管不着。", "talkname0", 1);
+Talk(91, "금륜사는 폐관했으니 못 들어갑니다。 구경은 다른 곳에서 하시오。", "talkname91", 0);
+Talk(0, "내가 들어가겠다는데 왜 막냐？ 대머리들은 상관하지 마라。", "talkname0", 1);
 if TryBattle(99) == true then goto label0 end;
     Dead();
     do return end;

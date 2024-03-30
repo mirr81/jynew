@@ -1,18 +1,18 @@
-Talk(50, "怎么，你准备好了吗？", "talkname50", 0);
+Talk(50, "어떤가？ 준비가 되었나？", "talkname50", 0);
 if AskBattle() == true then goto label0 end;
-    Talk(0, "嗯，还没。", "talkname0", 1);
-    Talk(50, "乔某随时在此等候少侠。", "talkname50", 0);
+    Talk(0, "아직…", "talkname0", 1);
+    Talk(50, "교 모는 항상 이곳에서 소협을 기다리고 있겠네。", "talkname50", 0);
     do return end;
 ::label0::
-    Talk(0, "在下特来领教乔大侠的“降龙十八掌”。", "talkname0", 1);
+    Talk(0, "교 대협의 항룡십팔장과 한 수 겨뤄 보겠습니다。", "talkname0", 1);
     if TryBattle(83) == true then goto label1 end;
         LightScence();
-        Talk(50, "你还不行，再回去苦练吧。", "talkname50", 0);
+        Talk(50, "자넨 아직 부족한 것 같으니 다시 돌아가서 열심히 연마하게나。", "talkname50", 0);
         do return end;
 ::label1::
         LightScence();
-        Talk(50, "少侠经这多日来的修练，武功果然不凡，乔某拜服。《天龙八部》你就拿去吧。", "talkname50", 0);
-        Talk(0, "哪里，乔帮主承让了。", "talkname0", 1);
+        Talk(50, "소협은 요 며칠간의 수련을 통해 무공이 입신의 경지에 이르렀군！ 교 모는 탄복했네！ 자！ 여기 \"천룡팔부\"를 가져가게。", "talkname50", 0);
+        Talk(0, "천만에요！ 교 방주님이 양보해 주신 덕분이죠！", "talkname0", 1);
         AddItem(147, 1);
         ModifyEvent(-2, -2, -2, -2, 529, -1, -1, -2, -2, -2, -2, -2, -2);--by fanyu 启动脚本529 场景51-14
         ModifyEvent(-2, 20, -2, -2, -1, -1, 530, -2, -2, -2, -2, -2, -2);--by fanyu 启动脚本530 场景51-20

@@ -1,19 +1,19 @@
-Talk(0, "杨兄，长年待在这古墓中，你受的了吗？", "talkname0", 1);
-Talk(58, "习惯就好了，龙儿还从小就住在这呢，这是我们古墓派的传统。", "talkname58", 0);
-Talk(0, "兄弟近来如何？", "talkname0", 1);
+Talk(0, "양 형！ 오랫동안 고묘에서만 생활하기가 불편하진 않나요？", "talkname0", 1);
+Talk(58, "습관이 돼서 괜찮아。 용아는 어려서부터 이곳에서 자랐지。 고묘파의 전통이라네。", "talkname58", 0);
+Talk(0, "양 형， 요즘 어떻게 지내세요？", "talkname0", 1);
 ModifyEvent(-2, -2, -2, -2, 439, -1, -1, -2, -2, -2, -2, -2, -2);
 if AskJoin () == true then goto label0 end;
-    Talk(0, "一切顺利，你夫妇俩可还好吧。", "talkname0", 1);
-    Talk(58, "托你的福，一切还好。", "talkname58", 0);
+    Talk(0, "덕분에 순조롭습니다。 양 형 부부는 잘 지내시죠？", "talkname0", 1);
+    Talk(58, "덕분에 잘 지낸다네。", "talkname58", 0);
     do return end;
 ::label0::
-    Talk(0, "近日旅途有些不顺，此次前来是想请杨兄加入，助我一臂之力。", "talkname0", 1);
-    Talk(58, "那有什么问题，别的没有，就是有“一臂”。", "talkname58", 0);
-    Talk(0, "杨兄说笑了。", "talkname0", 1);
-    Talk(58, "此次重出江湖，正好试试新练成的“黯然销魂掌”。", "talkname58", 0);
-    Talk(0, "那就走吧。", "talkname0", 1);
+    Talk(0, "양 형， 문제가 생겼어요。 양 형의 도움이 꼭 필요한데， 같이 가주시겠어요？", "talkname0", 1);
+    Talk(58, "외팔이도 쓸모가 있다면 기꺼이 도와주지。", "talkname58", 0);
+    Talk(0, "농담도 잘하시네요。", "talkname0", 1);
+    Talk(58, "이번에 강호로 나가면 마침 새로 창안한 암연소혼장도 시험해 봐야겠다。", "talkname58", 0);
+    Talk(0, "그럼 출발하시죠。", "talkname0", 1);
     if TeamIsFull() == false then goto label1 end;
-        Talk(58, "你的队伍已满，我无法加入。", "talkname58", 0);
+        Talk(58, "동생의 동료가 많으니 굳이 내 도움은 필요 없을 것 같군。", "talkname58", 0);
         do return end;
 ::label1::
         DarkScence();

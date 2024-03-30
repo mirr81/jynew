@@ -128,6 +128,7 @@ jyx2_SetTimelineSpeed = luaBridge.jyx2_SetTimelineSpeed--设置动画播放速�
 jyx2_PlayTimelineSimple = luaBridge.jyx2_PlayTimelineSimple--播放动画（简单模式）播放完毕后将自动停止动画
 jyx2_ShowEndScene = luaBridge.jyx2_ShowEndScene--游戏结束动画
 
+
 SetFlag = luaBridge.jyx2_SetFlag
 GetFlag = luaBridge.jyx2_GetFlag
 SetFlagInt = luaBridge.jyx2_SetFlagInt
@@ -183,7 +184,6 @@ GetCurrentEventID = luaBridge.GetCurrentEventID--获取当前事件ID
 JudgePointEventNum = luaBridge.JudgePointEventNum--判断指定触发器的交互事件
 GetMoneyCount = luaBridge.GetMoneyCount--获取金钱数量
 GetImbalancedRandomInt = luaBridge.GetImbalancedRandomInt--获取不平衡随机数
-
 
 --场景API
 scene_api = {}

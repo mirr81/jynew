@@ -1,11 +1,11 @@
 ScenceFromTo(20, 47, 20, 39);
 jyx2_CameraFollow("Level/NPC/各派弟子/崆峒弟子1");
-Talk(94, "哈！言兄，你昆仑派自许为名门正派，想不到也觊觎这“连城诀”啊。", "talkname94", 0);
-Talk(78, "哼！天下人之物，天下人得之。在场的崆峒，青城，泰山，还有这些其他各大门派的高手，不也是这么想吗？", "talkname78", 0);
+Talk(94, "언 형， 스스로 명문 정파라 자처하는 곤륜파도 \"연성결\" 을 노리는 줄 몰랐군！", "talkname94", 0);
+Talk(78, "흥！ 보물은 누구나 탐내는 법！ 여기 있는 공동파， 태산파， 청성파의 여러 고수들도 나와 같은 생각일 거다。", "talkname78", 0);
 ScenceFromTo(20, 39, 20, 47);
 jyx2_CameraFollowPlayer();
-Talk(0, "哗！这里可真热闹，想必各位都是为那“连城诀”而来的吧。但是很对不起，这东西我先定下，没你们的份了。", "talkname0", 1);
-Talk(97, "小子，找死！", "talkname97", 0);
+Talk(0, "똥파리들이 정말 많이도 모였군！ 모두 \"연성결\" 때문이겠지？ 어이！ 이 보쇼！ 누구도 내 물건에 손댈 생각하지마라！", "talkname0", 1);
+Talk(97, "건방진 것！", "talkname97", 0);
 if TryBattle(93) == true then goto label0 end;
     Dead();
     do return end;

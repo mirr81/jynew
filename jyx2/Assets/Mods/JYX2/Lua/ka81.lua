@@ -1,15 +1,15 @@
 jyx2_ReplaceSceneObject("", "Triggers/Leave", "");--by citydream 屏蔽出口（强制战斗推进剧情）
-Talk(12, "还是你这只蝙蝠飞的快，比我这老鹰先一步到达。", "talkname12", 0);
-Talk(14, "哪里，哪里，鹰王承让了。六大派似乎已经攻进去了，这小子大概是后援的人手，我们先将他拿下再说吧。", "talkname14", 0);
-Talk(12, "好啊！先暖暖我这把老骨头也好。", "talkname12", 0);
-Talk(0, "不是，不是，我是来帮…………", "talkname0", 1);
-Talk(12, "帮六大派的！我明教才不怕你们这些自居名门的家伙。", "talkname12", 0);
+Talk(12, "역시 박쥐가 빠르군， 독수리보다 한 걸음 먼저도착했어！", "talkname12", 0);
+Talk(14, "무슨 겸손의 말씀을！ 육대파가 이미 공격한 것 같소。 이 녀석은 아마 지원군일테니 먼저 함께 이 일을 해결하는 게 우선이오。", "talkname14", 0);
+Talk(12, "좋아！ 노부가 잠깐 몸 좀 풀어보지！", "talkname12", 0);
+Talk(0, "아니， 아니… 이 전쟁을 끝내러 왔는데…", "talkname0", 1);
+Talk(12, "돕긴 누굴 도와？ 육대문파나 도와라！ 난 너처럼 명문정파라 자처하는 녀석들의 도움 따윈 필요 없다！", "talkname12", 0);
 if TryBattle(11) == true then goto label0 end;
     Dead();
     do return end;
 ::label0::
     LightScence();
-    Talk(14, "可恶，爪子真硬，鹰王，我们先进去再说。", "talkname14", 0);
+    Talk(14, "이런， 무공이 정말 강하군！ 응왕， 일단 들어가시죠。", "talkname14", 0);
     jyx2_ReplaceSceneObject("", "NPC/weiyixiao_1", "");--韦一笑进门
     jyx2_ReplaceSceneObject("", "NPC/yintianzheng_1", ""); --殷天正进门
     DarkScence();
@@ -20,13 +20,13 @@ if TryBattle(11) == true then goto label0 end;
 	jyx2_ReplaceSceneObject("", "NPC/weiyixiao", "1");--韦一笑出现    
 	jyx2_ReplaceSceneObject("", "NPC/yintianzheng", "1"); --殷天正出现
     ModifyEvent(-2, 0, 0, 0, -1, -1, -1, -1, -1, -1, -2, -2, -2);
-	jyx2_ReplaceSceneObject("", "Triggers/Leave", "1");--by citydream 显示出口可以离开	
+    jyx2_ReplaceSceneObject("", "Triggers/Leave", "1");--by citydream 显示出口可以离开
     LightScence();
     ScenceFromTo(29, 48, 29, 35);
 	jyx2_CameraFollow("Level/NPC/fanyao");
-    Talk(8, "魔教已然一败涂地，再不投降，还待怎的？玄慈大师，咱们这便去毁了魔教三十三代教主的牌位吧！", "talkname8", 0);
-    Talk(7, "什么投不投降？魔教之众，今日不能留下任何活口。除恶务尽，否则他日死灰复燃，又将为害江湖。魔崽子们！识时务的快快自我了断，省得大爷们动手。", "talkname7", 0);
-    Talk(70, "华山派和崆峒派各位，请将顶上的魔教余孽一概诛灭了。武当派从西往东搜索，峨嵋派从东往西搜索，别让魔教有一人漏网。昆仑派预备火种，焚烧魔教巢穴。少林弟子各取法器，诵念往生经文，替六派殉难英雄，魔教教众超渡，化除冤孽。", "talkname70", 0);
+    Talk(8, "마교가 쓰러지고도 투항하지 않으니 어떻게 할까？ 현자대사， 。 마교 33대 교주의 위패를 무너뜨리러 갑시다！", "talkname8", 0);
+    Talk(7, "무슨 투항이야？ 마교의 잔당들을 절대 한 놈도 살려 두지 마라！ 한 놈이라도 놓치면 훗날 강호를 어지럽히는 원인이 된다！ 마교는 들어라！ 손을 쓰기 전에 순순히 자결하도록 해라！", "talkname7", 0);
+    Talk(70, "화산파와 공동파는 광명정의 마교 잔당들을 모두 죽이시오。 무당파는 서쪽을 맡고， 아미파는 동쪽을 맡아 한 놈도 놓쳐선 아니 되오！ 곤륜파는 마교 소굴에 불을 지르시오。 소림사는 제각기 법기로 왕생의 경문을 외워 죽은 마교인들이 내세에서 개과천선하길 빌어주시오。", "talkname70", 0);
     ScenceFromTo(29, 35, 29, 48);
 	jyx2_CameraFollowPlayer();
     AddRepute(4);

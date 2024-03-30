@@ -1,4 +1,4 @@
-Talk(51, "若你想知道《天龙八部》的下落，就快去找大燕国的传国玉玺。", "talkname51", 0);
+Talk(51, "만약 네가 천룡팔부를 찾고 싶으면 어서 빨리 대연국의 옥새를 가져와야 한다。", "talkname51", 0);
 if InTeam(53) == true then goto label0 end;
     do return end;
 ::label0::

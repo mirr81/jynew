@@ -1,2 +1,2 @@
-Talk(0, "这门似乎被锁住了。", "talkname0", 1);
+Talk(0, "이 문은 잠긴 것 같다。", "talkname0", 1);
 do return end;

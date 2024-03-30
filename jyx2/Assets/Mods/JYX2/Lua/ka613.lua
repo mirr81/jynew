@@ -1,7 +1,7 @@
-Talk(0, "韦小宝躲在哪里，快叫他出来。", "talkname0", 1);
-Talk(87, "小子你疯了，跑到我五毒教来大吼大叫的。", "talkname87", 0);
-Talk(0, "你们教主呢？是不是在跟韦小宝相好。", "talkname0", 1);
-Talk(87, "疯小子，想见教主是吧，我们就拿你去见。", "talkname87", 0);
+Talk(0, "위가 놈이 어디 숨어있지？ 썩 나오라고 해！", "talkname0", 1);
+Talk(87, "감히 오독교에서 소란을 피우다니！ 겁이 없는 자로구나！", "talkname87", 0);
+Talk(0, "교주는 어디 있지？ 위소보와 같이 있나？", "talkname0", 1);
+Talk(87, "교주님을 만나고 싶다면 안내하겠다。", "talkname87", 0);
 if TryBattle(97) == true then goto label0 end;
     Dead();
     do return end;

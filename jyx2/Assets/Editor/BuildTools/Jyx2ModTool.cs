@@ -75,19 +75,19 @@ namespace Jyx2Editor.BuildTool
         {
             if(m_AllModConfigs.Count == 0)
             {
-                EditorUtility.DisplayDialog("提示", "请先选择Mod配置文件", "确定");
+                EditorUtility.DisplayDialog("힌트", "먼저 Mod 구성 파일을 선택하십시오.", "확인");
                 return;
             }
             if(!Directory.Exists(m_ExportPath))
             {
-                EditorUtility.DisplayDialog("提示", "无效的导出路径，请修改后重试", "确定");
+                EditorUtility.DisplayDialog("힌트", "잘못된 내보내기 경로입니다. 수정한 후 다시 시도하십시오.", "확인");
                 return;
             }
             var allBundles = AssetDatabase.GetAllAssetBundleNames().ToList();
             if (!allBundles.Contains("base_assets"))
             {
-                var msg = string.Format("未找到名为base_assets的基础资源包，导出失败");
-                EditorUtility.DisplayDialog("提示", msg, "确定");
+                var msg = string.Format("base_assets 기본 리소스 패키지를 찾을 수 없습니다. 내보내기에 실패했습니다.");
+                EditorUtility.DisplayDialog("힌트", msg, "확인");
                 return;
             }
 
@@ -104,15 +104,15 @@ namespace Jyx2Editor.BuildTool
             //将打好分到对应文件夹
             MoveModBundlesToModFolder();
 
-            EditorUtility.DisplayDialog("提示", "导出结束", "确定");
+            EditorUtility.DisplayDialog("힌트", "내보내기 끝", "확인");
         }
 
         private void RegisterModForExport(MODRootConfig config)
         {
             if (string.IsNullOrEmpty(config.ModId))
             {
-                var msg = string.Format("[{0}]的ModId为空, 将不会导出", config.ModName);
-                EditorUtility.DisplayDialog("提示", msg, "确定");
+                var msg = string.Format("[{0}]의 ModId가 비어 있으며 내보낼 수 없습니다.", config.ModName);
+                EditorUtility.DisplayDialog("힌트", msg, "확인");
                 return;
             }
             var allBundles = AssetDatabase.GetAllAssetBundleNames().ToHashSet();
@@ -122,13 +122,13 @@ namespace Jyx2Editor.BuildTool
             if(!allBundles.Contains(mapBundleName))
             {
                 var msg = string.Format("未找到[{0}]的地图资源包，请将相关Scene移动到名字为[{1}]的AssetBundle中", config.ModName, mapBundleName);
-                EditorUtility.DisplayDialog("提示", msg, "确定");
+                EditorUtility.DisplayDialog("힌트", msg, "확인");
                 return;
             }
             if (!allBundles.Contains(modBundleName))
             {
                 var msg = string.Format("未找到[{0}]的Mod资源包，请将相关资源移动到名字为[{1}]的AssetBundle中", config.ModName, modBundleName);
-                EditorUtility.DisplayDialog("提示", msg, "确定");
+                EditorUtility.DisplayDialog("힌트", msg, "확인");
                 return;
             }
             EnsureModExportDirectoryExist(modId);

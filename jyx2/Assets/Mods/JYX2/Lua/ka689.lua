@@ -1,2 +1,2 @@
-Talk(0, "谢谢林师父。", "talkname0", 1);
+Talk(0, "고맙습니다， 임사부님！", "talkname0", 1);
 do return end;

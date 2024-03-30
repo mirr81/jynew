@@ -1,2 +1,2 @@
-Talk(13, "怎么，还没找到紫衫龙王吗？", "talkname13", 0);
+Talk(13, "아직도 자삼용왕을 못 찾았나？", "talkname13", 0);
 do return end;

@@ -30,22 +30,22 @@ namespace Jyx2.MOD.ModV2
         {
             StringBuilder sb = new StringBuilder();
 
-            sb.AppendLine($"<color=green>来源:{Tag}</color>");
+            sb.AppendLine($"<color=green>출처:{Tag}</color>");
             sb.AppendLine($"ID:{Info.Id}");
-            sb.AppendLine($"作者:{Info.Author}");
-            sb.AppendLine($"版本:{Info.Version}");
-            sb.AppendLine($"匹配客户端版本:{Info.ClientVersion}");
-            sb.AppendLine($"更新时间:{Info.CreateTime}");
+            sb.AppendLine($"저작자:{Info.Author}");
+            sb.AppendLine($"버전:{Info.Version}");
+            sb.AppendLine($"클라이언트 버전:{Info.ClientVersion}");
+            sb.AppendLine($"업데이트 시간:{Info.CreateTime}");
             if (IsPlatformMatch())
             {
-                sb.AppendLine($"打包平台:{Info.Platform.ToString()}");    
+                sb.AppendLine($"플랫폼:{Info.Platform.ToString()}");    
             }
             else
             {
-                sb.AppendLine($"<color=red>打包平台:{Info.Platform.ToString()} 与当前平台不匹配，强制启动可能导致错误</color> ");
+                sb.AppendLine($"<color=red>플랫폼:{Info.Platform.ToString()} 현재 플랫폼과 일치하지 않습니다. 강제 로딩으로 인해 오류가 발생할 수 있습니다.</color> ");
             }
             
-            sb.AppendLine($"简介:{Info.Desc}");
+            sb.AppendLine($"소개:{Info.Desc}");
 
 
             return sb.ToString();
@@ -60,7 +60,7 @@ namespace Jyx2.MOD.ModV2
             }
             else
             {
-                return $"<color=red>异常</color> [{Tag}]{Info.Name}({Id})";
+                return $"<color=red>오류</color> [{Tag}]{Info.Name}({Id})";
             }
         }
 

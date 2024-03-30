@@ -2,6 +2,6 @@ if UseItem(186) == true then goto label0 end;
     do return end;
 ::label0::
     AddItemWithoutHint(186, -1);
-    Talk(73, "通常在客栈或是你家中休息时都可恢复体力，生命，及内力。除非你是受伤不轻或是有中毒状况。", "talkname73", 0);
+    Talk(73, "객잔이나 집에서 쉬면 체력， 생명， 내력이 회복될 것이다。 단， 부상이 심각하거나 중독된 경우를 제외한다면 말이지。", "talkname73", 0);
     Add3EventNum(-2, 0, 0, 1, -1)
 do return end;

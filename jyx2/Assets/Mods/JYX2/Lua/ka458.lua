@@ -1,8 +1,8 @@
 if JudgeEthics(0, 50, 100) == false then goto label0 end;
-    Talk(68, "最近江湖上对你的风评还挺不错的，希望你继续保持下去。", "talkname68", 0);
+    Talk(68, "요즘 강호에서 네 명성이 좋더구나。 계속 유지하길 바란다。", "talkname68", 0);
     do return end;
 ::label0::
-    Talk(68, "你这作恶多端的小子，老道饶不了你。", "talkname68", 0);
+    Talk(68, "악행을 일삼은 파렴치한 녀석아， 노부가 너를 용서할 수 없다。", "talkname68", 0);
     if TryBattle(75) == true then goto label1 end;
         LightScence();
         do return end;

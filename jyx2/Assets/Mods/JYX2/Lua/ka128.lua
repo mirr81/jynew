@@ -1,2 +1,2 @@
-Talk(8, "哼！他日再跟阁下领教高招。", "talkname8", 0);
+Talk(8, "흥！ 훗날 가르침을 받겠소！", "talkname8", 0);
 do return end;

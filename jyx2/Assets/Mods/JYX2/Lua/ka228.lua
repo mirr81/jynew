@@ -1,6 +1,6 @@
 ScenceFromTo(44, 51, 48, 53);
 jyx2_CameraFollow("Level/NPC/嵩山弟子15");
-Talk(84, "费师哥，我看不如将刘正风一家老小抓起来，逼他承认与日月魔教的勾搭。到紧要关头时，说不得只好将他杀了。", "talkname84", 0);
+Talk(84, "비 사형， 유정풍의 가족을 납치해 마교와의 관계를 실토하게 만드는 게 낫지 않아？ 필요시에는 그들을 죽일 수밖에 없겠지만。", "talkname84", 0);
 ScenceFromTo(48, 53, 44, 51);
 jyx2_CameraFollowPlayer();
 ModifyEvent(-2, 22, 0, 0, -1, -1, -1, -1, -1, -1, -2, -2, -2);

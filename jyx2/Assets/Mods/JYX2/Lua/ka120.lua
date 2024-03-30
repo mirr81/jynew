@@ -1,2 +1,2 @@
-Talk(11, "祝少侠此后平步青云。", "talkname11", 0);
+Talk(11, "소협이 앞으로 가는 길이 순조롭길 빌겠네。", "talkname11", 0);
 do return end;

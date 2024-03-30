@@ -9,7 +9,7 @@ using Jyx2;
 public class LuaTestStarter : ScriptableObject
 {
 #if UNITY_EDITOR
-    [LabelText("要测试的Lua文件")] public List<TextAsset> luaFiles;
+    [LabelText("테스트할 Lua 파일")] public List<TextAsset> luaFiles;
     [Button("测试Lua代码")]
     public void luaTest()
     {

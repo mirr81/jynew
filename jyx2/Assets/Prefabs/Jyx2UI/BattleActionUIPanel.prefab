@@ -143,7 +143,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u53D6\u6D88"
+  m_Text: "\uCDE8\uC18C"
 --- !u!114 &8115117372327407844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -169,7 +169,7 @@ GameObject:
   - component: {fileID: 4075993072335943092}
   - component: {fileID: 711520319837214805}
   - component: {fileID: 4075993074040134607}
-  - component: {fileID: 2388694184497605828}
+  - component: {fileID: 5423686265652881503}
   m_Layer: 5
   m_Name: Skills
   m_TagString: Untagged
@@ -194,7 +194,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 150}
+  m_SizeDelta: {x: -400, y: 320}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &4075993072335942987
 CanvasRenderer:
@@ -211,14 +211,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4075993072335943088}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0.392}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -267,7 +267,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &2388694184497605828
+--- !u!114 &5423686265652881503
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -276,7 +276,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4075993072335943088}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
+  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
@@ -284,15 +284,13 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 4
-  m_Spacing: 20
-  m_ChildForceExpandWidth: 0
-  m_ChildForceExpandHeight: 0
-  m_ChildControlWidth: 0
-  m_ChildControlHeight: 0
-  m_ChildScaleWidth: 0
-  m_ChildScaleHeight: 0
-  m_ReverseArrangement: 0
+  m_ChildAlignment: 7
+  m_StartCorner: 2
+  m_StartAxis: 0
+  m_CellSize: {x: 150, y: 150}
+  m_Spacing: {x: 0, y: 0}
+  m_Constraint: 1
+  m_ConstraintCount: 10
 --- !u!1 &4075993073106387126
 GameObject:
   m_ObjectHideFlags: 0
@@ -1726,7 +1724,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u79FB\u52A8"
+  m_Text: "\uC774\uB3D9"
 --- !u!114 &3559217107824925049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1818,7 +1816,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u6295\u964D"
+  m_Text: "\uD56D\uBCF5"
 --- !u!114 &2096726653319285602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1910,7 +1908,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u7269\u54C1"
+  m_Text: "\uB3C4\uAD6C"
 --- !u!114 &1347152741507441412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2002,7 +2000,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u7B49\u5F85"
+  m_Text: "\uB300\uAE30"
 --- !u!114 &1954470292714017678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2094,7 +2092,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u533B\u7597"
+  m_Text: "\uC758\uB8CC"
 --- !u!114 &692647278613631408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2186,7 +2184,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u4F11\u606F"
+  m_Text: "\uD734\uC2DD"
 --- !u!114 &5799923557018521754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2278,7 +2276,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u7528\u6BD2"
+  m_Text: "\uC911\uB3C5"
 --- !u!114 &431262927642868683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2370,7 +2368,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u89E3\u6BD2"
+  m_Text: "\uD574\uB3C5"
 --- !u!114 &3347158414224832768
 MonoBehaviour:
   m_ObjectHideFlags: 0

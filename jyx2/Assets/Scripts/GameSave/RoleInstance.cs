@@ -361,22 +361,22 @@ namespace Jyx2
         int LimitAttr(int attr, int minValue, int maxValue, int extraValue)
         {
             int attrNeat = attr - extraValue;
-            //净值大于最大值，限制净值为最大值
+            //净值大于最大值，限制净值为最大值  순수능력이 최대값보다 크면 최대값으로 제한됨
             if (attrNeat > maxValue)
             {
                 return maxValue + extraValue;
             }
-            //净值小于最小值而且附加值为正,限制净值为最小值
+            //净值小于最小值而且附加值为正,限制净值为最小值 순수능력이 최소값보다 작고 부가능력이 양수이며 순수능력이 최소값으로 제한됨
             if (attrNeat < minValue && extraValue > 0)
             {
                 return minValue + extraValue;
             }
-            //净值小于最小值且附加值为负,限制总值为最小值
+            //净值小于最小值且附加值为负,限制总值为最小值   순수능력이 최소값보다 작고 부가능력이 음수이며 제한총액은 최소값이다
             if (attrNeat < minValue && extraValue < 0)
             {
                 return minValue;
             }
-            //以上都没有，则认为属性符合要求
+            //以上都没有，则认为属性符合要求    이상이 없으면 속성이 요구에 부합된다고 생각합니다
             return attr;
         }
 
@@ -392,11 +392,11 @@ namespace Jyx2
 
         private static Type _thisType = Type.GetType("Jyx2.RoleInstance");
         /// <summary>
-        /// 增加角色属性的API
+        /// 增加角色属性的API   역할 속성을 추가하는 API
         /// </summary>
-        /// <param name="attrName">属性名</param>
-        /// <param name="delta">属性增量</param>
-        /// <returns>属性实际增量</returns>
+        /// <param name="attrName">属性名</param>   속성 이름
+        /// <param name="delta">属性增量</param>    속성 증가
+        /// <returns>属性实际增量</returns> 실제 속성 증가
         public int AddAttr(string attrName, int delta)
         {
             var attr = _thisType.GetField(attrName);
@@ -411,8 +411,21 @@ namespace Jyx2
             return (int)attr.GetValue(this) - oldValue;
         }
 
-        public int ExpGot; //战斗中获得的经验
-        public int PreviousRoundHp; //上一回合的生命值
+        public int AddRateAttr(string attrName, float rate) {
+            var attr = _thisType.GetField(attrName);
+            if (attr == null)
+            {
+                Debug.LogError($"人物属性 {attrName} 不存在");
+                return -1;
+            }
+            int oldValue = (int)attr.GetValue(this);
+            attr.SetValue(this, (int)(oldValue * rate));
+            LimitAllAttrs();
+            return (int)attr.GetValue(this) - oldValue;
+        }
+
+        public int ExpGot; //战斗中获得的经验   전투에서 얻은 경험
+        public int PreviousRoundHp; //上一回合的生命值  이전 라운드 생명치
         #endregion
 
         public LItemConfig GetWeapon()
@@ -449,6 +462,7 @@ namespace Jyx2
         {
             List<SkillCastInstance> skills = new List<SkillCastInstance>();
             //金庸DOS版逻辑，体力大于等于10且有武功最低等级所需内力值才可以使用技能
+            //김용 DOS 버전의 논리, 체력이 10 이상이고 기술 값을 사용하는 데 필요한 무공의 최소 레벨이 10 이상이어야 합니다.
             if (this.Tili >= 10)
             {
                 foreach (var skill in Skills)
@@ -461,7 +475,7 @@ namespace Jyx2
             if (forceAttackSkill)
                 return skills;
 
-            //金庸DOS版逻辑，用毒、解毒、医疗
+            //金庸DOS版逻辑，用毒、解毒、医疗   독, 해독, 치료를 사용하는 김용 DOS 버전의 논리   
             if (this.UsePoison >= 20 && this.Tili >= 10) skills.Add( new PoisonSkillCastInstance(this.UsePoison));
             if (this.DePoison >= 20 && this.Tili >= 10) skills.Add(new DePoisonSkillCastInstance(this.DePoison));
             if (this.Heal >= 20 && this.Tili >= 50) skills.Add(new HealSkillCastInstance(this.Heal));
@@ -548,32 +562,32 @@ namespace Jyx2
         {
             if (item == null) return false;
 
-            //剧情类无人可以使用
+            //剧情类无人可以使用    줄거리 종류는 아무도 사용할 수 없다
             if (item.ItemType == 0)
                 return false;
 
-            else if ((int)item.ItemType == 1 || (int)item.ItemType == 2)
+            else if ((int)item.ItemType == 1 || (int)item.ItemType == 2 || (int)item.ItemType == 5)
             {
 
-                if ((int)item.ItemType == 2)
+                if ((int)item.ItemType == 2 || (int)item.ItemType == 5)
                 {   
-                    //若为可习得技能的武学
+                    //若为可习得技能的武学  기술을 습득할 수 있는 무학이라면
                     if (item.Skill>=0)
                     {
-                        //若武学等级大于一，说明已习得武学，直接装备
+                        //若武学等级大于一，说明已习得武学，直接装备    만약 무학 레벨이 1보다 크면, 무학을 습득하였음을 의미하며, 직접 장착
                         int level = GetWugongLevel(item.Skill);
                         if (level > 0)
                         {
                             return true;
                         }
-                        //若无相关武学，开始装备条件判断
-                        //有仅适合人物，直接判断
+                        //若无相关武学，开始装备条件判断    관련 무학이 없으면, 장비 조건 판단 시작
+                        //有仅适合人物，直接判断    인물에만 적합하고 직접 판단하다
                         if (item.OnlySuitableRole >= 0)
                         {
                             return item.OnlySuitableRole == this.Key;
                         }
 
-                        //内力属性判断
+                        //内力属性判断  내력 속성 판단
                         if ((this.MpType == 0 || this.MpType == 1) && (item.NeedMPType == 0 || (int)item.NeedMPType == 1))
                         {
                             if (this.MpType != (int)item.NeedMPType)
@@ -581,23 +595,23 @@ namespace Jyx2
                                 return false;
                             }
                         }
-                        //若已经学满武学，则为假
+                        //若已经学满武学，则为假    이미 만무학 을 배웠다면, 거짓 이다
                         if (level < 0 || this.Wugongs.Count >= GameConst.MAX_SKILL_COUNT)
                         {
                             return false;
                         }
                     }
-                    //若不是练武学技能的秘籍
+                    //若不是练武学技能的秘籍    무학 기술을 연마하는 비적이 아니라면
                     else
                     {
 
-                        //有仅适合人物，直接判断
+                        //有仅适合人物，直接判断    인물에만 적합하고 직접 판단하다
                         if (item.OnlySuitableRole >= 0)
                         {
                             return item.OnlySuitableRole == this.Key;
                         }
 
-                        //内力属性判断
+                        //内力属性判断  내력 속성 판단
                         if ((this.MpType == 0 || this.MpType == 1) && (item.NeedMPType == 0 || (int)item.NeedMPType == 1))
                         {
                             if (this.MpType != (int)item.NeedMPType)
@@ -613,7 +627,7 @@ namespace Jyx2
 
 
 
-                //上面的判断未确定则进入下面的判断链
+                //上面的判断未确定则进入下面的判断链    위의 판단이 확정되지 않으면 아래의 판단 체인으로 들어간다
                 return testAttr(this.Attack - GetWeaponProperty("Attack") - GetArmorProperty("Attack"), item.ConditionAttack)
                     && testAttr(this.Qinggong - GetWeaponProperty("Qinggong") - GetArmorProperty("Qinggong"), item.ConditionQinggong)
                     && testAttr(this.Heal, item.ConditionHeal)
@@ -629,12 +643,12 @@ namespace Jyx2
             }
             else if ((int)item.ItemType == 3)
             {
-                //药品类所有人可以使用
+                //药品类所有人可以使用  약품류는 모든 사람이 사용할 수 있다
                 return true;
             }
             else if ((int)item.ItemType == 4)
             {
-                //暗器类不可以使用
+                //暗器类不可以使用  다크 클래스 사용 불가
                 return false;
             }
 
@@ -709,7 +723,7 @@ namespace Jyx2
 
                 runtime.AddItem(practiseItem.GenerateItemNeedCost, -pickItem.Count);
                 ExpForMakeItem = 0;
-                return $"{Name} 制造出 {LuaToCsBridge.ItemTable[pickItem.Id].Name}\n";
+                return $"{Name} 제조 {LuaToCsBridge.ItemTable[pickItem.Id].Name}\n";
             }
 
             return "";
@@ -851,7 +865,7 @@ namespace Jyx2
         /// <returns></returns>
         public int GetFinishedExpForItem(LItemConfig item)
         {
-            if (item == null || (int)item.ItemType != 2 || item.NeedExp < 0)
+            if (item == null || ((int)item.ItemType != 2 && (int)item.ItemType != 5) || item.NeedExp < 0)
             {
                 return GameConst.MAX_EXP;
             }
@@ -897,7 +911,6 @@ namespace Jyx2
 
             return 0;
         }
-
 
         public LRoleConfig Data
         {
@@ -1108,7 +1121,7 @@ namespace Jyx2
             }
         }
 
-        //学习武学逻辑，对应kyscpp int Role::learnMagic(int magic_id)
+        //学习武学逻辑，对应kyscpp int Role::learnMagic(int magic_id)   무학 논리 학습, kyscpp 대응
         public int LearnMagic(int magicId)
         {
             if (magicId <= 0)
@@ -1171,17 +1184,17 @@ namespace Jyx2
         }
 
         /// <summary>
-        /// 获取武器武功配合加攻击力
+        /// 获取武器武功配合加攻击力    무기 무공에 맞는 무공의 공격력 추가
         ///
-        /// 计算方法参考：https://github.com/ZhanruiLiang/jinyong-legend
+        /// 计算方法参考 계산 방법 참조：https://github.com/ZhanruiLiang/jinyong-legend
         ///
-        /// 玄铁剑+玄铁剑法 攻击+100
-        /// 君子剑+玉女素心剑 攻击+50
-        /// 淑女剑+玉女素心剑 攻击+50
-        /// 血刀+血刀大法 攻击+50
-        /// 冷月宝刀+胡家刀法 攻击+70
-        /// 金蛇剑+金蛇剑法 攻击力+80
-        /// 霹雳狂刀+霹雳刀法 攻击+100
+        /// 玄铁剑+玄铁剑法 攻击+100        현철검 + 현철검법 공격 +100
+        /// 君子剑+玉女素心剑 攻击+50       군자검 + 옥녀소심검법 공격 +50
+        /// 淑女剑+玉女素心剑 攻击+50       숙녀검 + 옥녀소심검법 공격 +50
+        /// 血刀+血刀大法 攻击+50           혈도 + 혈도대법 공격 +50
+        /// 冷月宝刀+胡家刀法 攻击+70       냉월보도 + 호가도법 공격 +70
+        /// 金蛇剑+金蛇剑法 攻击力+80       금사검 + 금사검법 공격력 +80
+        /// 霹雳狂刀+霹雳刀法 攻击+100      벽력광도 + 벽력도법 공격 +100
         /// </summary>
         /// <param name="wugong"></param>
         /// <returns></returns>
@@ -1207,5 +1220,10 @@ namespace Jyx2
         }
 
         public bool IsPlayerRole => this == GameRuntimeData.Instance.Player;
+
+        public void SetName(string name)
+        {
+            Name = name;
+        }
     }
 }

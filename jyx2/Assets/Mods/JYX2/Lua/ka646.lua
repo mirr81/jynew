@@ -1,2 +1,2 @@
-Talk(0, "咦！这墙上有个刀孔，形状像把短刀。", "talkname0", 1);
+Talk(0, "어！ 벽에 칼자국이 있구나！ 모양이 단검 같은데…", "talkname0", 1);
 do return end;

@@ -1,25 +1,25 @@
 ScenceFromTo(28, 24, 28, 17);
 jyx2_CameraFollow("Level/NPC/baiwanjian");
-Talk(41, "侠客岛赏善罚恶使者，前来拜见雪山派掌门！", "talkname41", 0);
-Talk(43, "尊驾二位便是侠客岛的赏善罚恶使者吗？", "talkname43", 0);
-Talk(42, "正是。不知哪位是雪山派掌门人？我们奉侠客岛岛主之命，手持铜牌前来，邀请贵派掌门赴敝岛相叙，喝碗腊八粥。", "talkname42", 0);
+Talk(41, "협객도의 상선벌악 사자가 설산파 장문인을 뵙습니다。", "talkname41", 0);
+Talk(43, "두 분， 협객도의 사자님들이 오셨습니까？", "talkname43", 0);
+Talk(42, "그렇소。 누가 설산파의 장문이요？ 동패를 가지고 협객도에 왕림하여 납팔죽을 드시라는 도주님의 초청이오。", "talkname42", 0);
 ScenceFromTo(28, 17, 28, 24);
 jyx2_CameraFollowPlayer();
-Talk(0, "＜搞不好侠客岛上有线索？不是有本书与“侠”字有关联吗？＞", "talkname0", 1);
+Talk(0, "\"협\" 자가 있는 책이 있는데， 설마 협객도와 연관이 있는 걸까？'", "talkname0", 1);
 WalkFromTo(28, 24, 28, 19);
 jyx2_WalkFromTo(-1,2819);
-Talk(0, "铜牌给我好不好？", "talkname0", 1);
-Talk(41, "恐怕不行，侠客岛所邀请的是各门派的掌门及对武学有特殊见解的武林高手。", "talkname41", 0);
-Talk(0, "那如果我打败他，是不是表示我比他有资格去？", "talkname0", 1);
-Talk(43, "哪里来的小娃儿，敢在我凌霄城撒野。", "talkname43", 0);
+Talk(0, "동패를 내게 주시죠。", "talkname0", 1);
+Talk(41, "안됩니다。 문파의 장문인과 무림고수 외에는 초대받을 자격이 없네。", "talkname41", 0);
+Talk(0, "내가 백 장문을 이기면 받을 자격이 있소？", "talkname0", 1);
+Talk(43, "피도 안 마른 것이 능소성을 깔보다니！", "talkname43", 0);
 if TryBattle(59) == true then goto label0 end;
     Dead();
     do return end;
 ::label0::
     LightScence();
-    Talk(0, "前辈，承让了！", "talkname0", 1);
-    Talk(43, "哼！白某无话可说，也无脸去喝这腊八粥。", "talkname43", 0);
-    Talk(41, "好！这位兄弟，十二月初八，请到侠客岛喝碗腊八粥。", "talkname41", 0);
+    Talk(0, "자， 내가 이겼소。", "talkname0", 1);
+    Talk(43, "흥！ 백 모가 패했으니 할 말도 없고 납팔죽을 먹을 자격도 없다。", "talkname43", 0);
+    Talk(41, "좋소！ 12월 초파일에 협객도로 초대하겠소。", "talkname41", 0);
     DarkScence();
     jyx2_ReplaceSceneObject("", "NPC/shizhe1", "");--使者离开
     jyx2_ReplaceSceneObject("", "NPC/shizhe2", "");--使者离开

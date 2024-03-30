@@ -17,7 +17,7 @@ public class UIComponentFilterEditor : UnityEditor.Editor
         serializedObject.Update();
         m_selectList.Clear();
 
-        EditorGUILayout.LabelField("请勾选需要导出的组件");
+        EditorGUILayout.LabelField("내보낼 구성 요소를 선택하십시오.");
         Dictionary<string, bool> m_componentNameDics = m_UIComponentFilter.GetComponentNames();
         foreach (KeyValuePair<string, bool> kv in m_componentNameDics)
         {

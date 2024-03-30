@@ -366,7 +366,7 @@ namespace Jyx2
         private string GenerateSaveSummaryInfo()
         {
             string mapName = LevelMaster.GetCurrentGameMap().GetShowName();
-            return $"{Player.Level}级,{mapName},队伍:{GetTeamMembersCount()}人";
+            return $"{Player.Level}급,{mapName},일행:{GetTeamMembersCount()}명";
         }
 
         #endregion
@@ -431,7 +431,7 @@ namespace Jyx2
                         //---------------------------------------------------------------------------
                         //特定位置的翻译【得到物品提示】
                         //---------------------------------------------------------------------------
-                        StoryEngine.DisplayPopInfo("得到物品:".GetContent(nameof(GameRuntimeData)) + LuaToCsBridge.ItemTable[item.Id].Name + "×" + Math.Abs(item.Count));
+                        StoryEngine.DisplayPopInfo("물품획득:".GetContent(nameof(GameRuntimeData)) + LuaToCsBridge.ItemTable[item.Id].Name + "×" + Math.Abs(item.Count));
                         //---------------------------------------------------------------------------
                         //---------------------------------------------------------------------------
                     }
@@ -700,6 +700,7 @@ namespace Jyx2
         {
             var gameMap = LuaToCsBridge.MapTable[mapId];
             if (gameMap == null) return -1;
+
 
             //大地图
             if (gameMap.Tags.Contains("WORLDMAP"))

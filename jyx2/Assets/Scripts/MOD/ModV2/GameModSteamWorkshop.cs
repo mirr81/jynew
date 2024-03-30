@@ -37,11 +37,11 @@ namespace Jyx2.MOD.ModV2
         {
             if (IsBroken && Info != null)
             {
-                return $"[{Tag}]<color=red>老旧版本,可能无法启动, {SteamItem.Title}({Id})</color>";
+                return $"[{Tag}]<color=red>이전버전,실행되지 않을 수 있음, {SteamItem.Title}({Id})</color>";
             }
             else if (IsBroken && Info == null)
             {
-                return $"[{Tag}]<color=red>已损坏, {SteamItem.Title}</color>";
+                return $"[{Tag}]<color=red>손상됨, {SteamItem.Title}</color>";
             }
             else
             {
@@ -95,15 +95,15 @@ namespace Jyx2.MOD.ModV2
         
         public override void Init()
         {
-            try
-            {
-                if (!SteamClient.IsValid)
-                    SteamClient.Init(SteamAppId);
-            }
-            catch (Exception e)
-            {
-                Debug.LogError("steam没有启动或登录，所以steamWorkShopLoader不可用。启动steam后重启游戏方可生效。");
-            }
+            // try
+            // {
+            //     if (!SteamClient.IsValid)
+            //         SteamClient.Init(SteamAppId);
+            // }
+            // catch (Exception e)
+            // {
+            //     Debug.LogError("steam이 시작되거나 로그인되지 않았기 때문에 steamWorkShopLoader를 사용할 수 없습니다.steam을 시작한 후 게임을 다시 시작해야 유효합니다.");
+            // }
         }
 
         //适配老的创意工坊版本

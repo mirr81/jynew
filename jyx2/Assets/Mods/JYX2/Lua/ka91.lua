@@ -1,6 +1,6 @@
-Talk(0, "好啊！成昆，原来你躲在这里。怎么，几个坏蛋聚在这里，是不是又在一起商量什么坏勾当？", "talkname0", 1);
-Talk(18, "哼！上次的事全被你坏了，我这次饶不了你。", "talkname18", 0);
-Talk(0, "手下败将还说大话，这次得小心一点，可别再让你跑了。", "talkname0", 1);
+Talk(0, "이놈！ 성곤！ 여기 숨어있었구나！ 소인배들끼리 모여있는 걸 보니 또 비겁한 계략을 꾸미고 있겠군！", "talkname0", 1);
+Talk(18, "흥！ 내 일을 망쳤으니， 널 용서하지 않겠다！", "talkname18", 0);
+Talk(0, "패자는 닥쳐라 좀！ 이 번엔 놓치지 않게 조심해야지！", "talkname0", 1);
 if TryBattle(13) == true then goto label0 end;
     Dead();
     do return end;
@@ -15,7 +15,7 @@ if TryBattle(13) == true then goto label0 end;
     jyx2_ReplaceSceneObject("", "NPC/成昆喽喽3", "");
     jyx2_ReplaceSceneObject("", "NPC/成昆", "");
     LightScence();
-    Talk(0, "今天真是大快人心，替武林除了一个大害。", "talkname0", 1);
+    Talk(0, "무림의 큰 골칫덩이를 없앴으니 정달 다행이군！", "talkname0", 1);
     AddItem(191, 1);
     AddRepute(5);
 do return end;

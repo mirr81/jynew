@@ -1,4 +1,4 @@
-Talk(91, "小子，你居然还敢再来，找死。", "talkname91", 0);
+Talk(91, "이 자식， 네가 감히 다시 오다니， 죽으려고 환장했구나！", "talkname91", 0);
 if TryBattle(99) == true then goto label0 end;
     Dead();
     do return end;

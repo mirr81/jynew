@@ -1,2 +1,2 @@
-Talk(3, "小兄弟，行走江湖记得多行侠仗义。", "talkname3", 0);
+Talk(3, "소형제， 강호에 나가면 협행을 많이 베풀어야 한다네。", "talkname3", 0);
 do return end;

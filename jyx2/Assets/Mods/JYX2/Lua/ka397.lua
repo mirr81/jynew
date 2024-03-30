@@ -1,14 +1,14 @@
-Talk(58, "少侠别来无恙，旅程一切还好吧。", "talkname58", 0);
-Talk(0, "一切还好。", "talkname0", 1);
+Talk(58, "소협， 잘 있었나？ 천하를 구경하는 일은 좀 어떤가？", "talkname58", 0);
+Talk(0, "다 좋습니다。", "talkname0", 1);
 if AskJoin () == true then goto label0 end;
     do return end;
 ::label0::
-    Talk(0, "不知杨兄是否有意与我为伴云游各地，一览这五岳三川的风貌。", "talkname0", 1);
+    Talk(0, "양 형， 저와 함께 천하를 돌며 절경도 구경하고 모험도 하지 않겠어요？", "talkname0", 1);
     if TeamIsFull() == false then goto label1 end;
-        Talk(58, "你的队伍已满，我无法加入。", "talkname58", 0);
+        Talk(58, "형제의 동료가 많으니 나는 다음에 함께 하겠네。", "talkname58", 0);
         do return end;
 ::label1::
-        Talk(58, "好啊！或许旅途中会有龙儿的下落也说不定。", "talkname58", 0);
+        Talk(58, "좋다！ 어쩌면 용아의 소식을 들을지도 모르니까。", "talkname58", 0);
         DarkScence();
         ModifyEvent(-2, -2, 0, 0, -1, -1, -1, -1, -1, -1, -2, -2, -2);--by fanyu|杨过加入队伍。场景07-编号06
         jyx2_ReplaceSceneObject("", "NPC/杨过", ""); 

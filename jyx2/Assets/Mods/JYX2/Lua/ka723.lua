@@ -2,6 +2,6 @@ if UseItem(186) == true then goto label0 end;
     do return end;
 ::label0::
     AddItemWithoutHint(186, -1);
-    Talk(73, "医书上曾言，凡毒蛇出没之处，七步之内必有解除其毒性之药。其他毒物，无不如此，这是天地间万物生克的至理。所以如果你身中异毒时，或许解药就在该毒物的附近。", "talkname73", 0);
+    Talk(73, "독사가 출몰하는 곳에서 일곱 걸음 안에는 해독제가 있다고 한다。 어떠한 천하 만물도 천적이 있다는 이치다。 중독당했을 때 해독제는 독물 근처에 있을 것이네。", "talkname73", 0);
     Add3EventNum(-2, 0, 0, 1, -1)
 do return end;

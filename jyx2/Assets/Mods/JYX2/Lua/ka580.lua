@@ -1,11 +1,11 @@
-Talk(93, "怎么，还想闯打狗阵吗？", "talkname93", 0);
-Talk(0, "小弟再试试。", "talkname0", 1);
+Talk(93, "왜， 아직도 개방 타구진에 도전하고 싶은가？", "talkname93", 0);
+Talk(0, "동생 다시 해봐。", "talkname0", 1);
 if TryBattle(82) == true then goto label0 end;
     ModifyEvent(-2, 0, -2, -2, 580, -1, -1, -2, -2, -2, -2, -2, -2);
     ModifyEvent(-2, 1, -2, -2, 580, -1, -1, -2, -2, -2, -2, -2, -2);
     ModifyEvent(-2, 5, -2, -2, 580, -1, -1, -2, -2, -2, -2, -2, -2);
     LightScence();
-    Talk(93, "阁下这样的功夫，似乎不配见我家帮主。", "talkname93", 0);
+    Talk(93, "소협의 실력으론 우리 방주님을 만날 자격이 없는 것 같군。", "talkname93", 0);
     do return end;
 ::label0::
     ModifyEvent(-2, 0, 0, 0, -1, -1, -1, -1, -1, -1, -2, -2, -2);
@@ -31,6 +31,6 @@ if TryBattle(82) == true then goto label0 end;
     ModifyEvent(-2, 18, -2, -2, 524, -1, -1, -2, -2, -2, -2, -2, -2);
     ModifyEvent(-2, 19, -2, -2, 524, -1, -1, -2, -2, -2, -2, -2, -2);
     LightScence();
-    Talk(93, "阁下功夫不错，竟破了我丐帮之打狗阵法。乔帮主就在里面，请进，我家帮主一定很高兴认识你。", "talkname93", 0);
+    Talk(93, "개방의 타구진을 파훼하다니 소협의 무공이 고강하군！ 교방주님은 안에 계시오。 반갑게 맞이할 것이네。", "talkname93", 0);
     AddRepute(2);
 do return end;

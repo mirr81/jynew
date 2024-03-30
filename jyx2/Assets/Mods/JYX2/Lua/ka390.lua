@@ -1,4 +1,4 @@
-Talk(0, "哇塞！雕蛇大战，精彩！……咦！雕兄似乎快不行了，看我的！", "talkname0", 1);
+Talk(0, "와싸！ 괴조와 이무기가 싸운다니！ 신기한 일이야… 괴조가 지고 있구나。 내가 도와주마！", "talkname0", 1);
 if TryBattle(66) == true then goto label0 end;
     Dead();
     do return end;
@@ -11,11 +11,11 @@ if TryBattle(66) == true then goto label0 end;
     jyx2_SwitchRoleAnimation("NPC/蟒蛇", "Assets/BuildSource/AnimationControllers/Viper_jyx2_dead.controller");--蟒蛇动作
     jyx2_SwitchRoleAnimation("NPC/大雕", "Assets/BuildSource/AnimationControllers/Eagle_idle.controller");--大雕动作
     LightScence();
-    Talk(0, "这巨蟒还真难对付，总算把它搞定了。雕兄，你还好吧？", "talkname0", 1);
-    Talk(104, "嘎，嘎，嘎……", "talkname104", 0);
-    Talk(0, "你在谢我是吧。唉！没什么了不起的。", "talkname0", 1);
-    Talk(104, "嘎，嘎，嘎……", "talkname104", 0);
-    Talk(0, "这头雕看起来颇通灵性，像是被饲养过的，莫非洞中住有什么高人？", "talkname0", 1);
+    Talk(0, "엄청난 이무기야！ 힘들게 처치했군。 괴조 형， 괜찮아？", "talkname0", 1);
+    Talk(104, "까아， 까아， 까악…", "talkname104", 0);
+    Talk(0, "고맙다는 말이구나。 뭘， 당연히 할 일을 했을 뿐！", "talkname0", 1);
+    Talk(104, "까아， 까아， 까악…", "talkname104", 0);
+    Talk(0, "말을 알아듣는데？ 분명 사람이 길렀을 거야。 고인이 살고 계시나？", "talkname0", 1);
     AddEthics(2);
     AddRepute(4);
 do return end;

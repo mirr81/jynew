@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: ModSetting
   m_EditorClassIdentifier: 
   ModId: JYX2
-  IsNativeMod: 0
-  Desc: "\u4EE5\u300A\u7FA4\u4FA0\u4F20\uFF0C\u542F\u52A8\uFF01\u300B\u6846\u67B6\u4E3A\u57FA\u7840\uFF0C\u5C3D\u53EF\u80FD\u7684\u8FD8\u539F\u300A\u91D1\u5EB8\u7FA4\u4FA0\u4F20\u300B\u76843D\u91CD\u5236\u7248\u3002"
-  Version: 
-  ModName: "\u91D1\u5EB8\u7FA4\u4FA0\u4F203D\u91CD\u5236\u7248"
+  IsNativeMod: 1
+  Desc: "\u300A\uAE40\uC6A9\uAD70\uD611\uC804\u300B3D \uC774\uC2DD\uD310"
+  Version: v1.1
+  ModName: "\uAE40\uC6A9\uAD70\uD611\uC8043D\uB9AC\uB9C8\uC2A4\uD130"
   ModRootDir: Assets/Mods/JYX2
   Author: "\u91D1\u5EB8\u7FA4\u4FA0\u4F203D\u91CD\u5236\u7248\u793E\u533A"
   LuaFilePatten: ka{0}
@@ -24,92 +24,93 @@ MonoBehaviour:
   PlayerName: 
   PreloadedLua:
   - modentry
+  - encounter
   EnableSaveBigMapOnly: 1
   EnableKickTeammateBigMapOnly: 1
   AutoBattleOnly: 0
   BattleTimeScale: 1
   ShowSkillNameInBattle: 0
   IsConsoleEnable: 1
-  ConsoleDisableDifficulty: 0100000002000000
+  ConsoleDisableDifficulty: 
   IsPlayUseItemAnimation: 1
   StoryIdNameFixes:
   - Id: 76
-    Name: "\u6B66\u5F53\u5F1F\u5B50"
+    Name: "\uBB34\uB2F9\uC81C\uC790"
   - Id: 77
-    Name: "\u5CE8\u5D4B\u5F1F\u5B50"
+    Name: "\uC544\uBBF8\uC81C\uC790"
   - Id: 78
-    Name: "\u6606\u4ED1\u5F1F\u5B50"
+    Name: "\uACE4\uB95C\uC81C\uC790"
   - Id: 79
-    Name: "\u5D06\u5CD2\u5F1F\u5B50"
+    Name: "\uACF5\uB3D9\uC81C\uC790"
   - Id: 80
-    Name: "\u660E\u6559\u5F1F\u5B50"
+    Name: "\uBA85\uAD50\uC81C\uC790"
   - Id: 81
-    Name: "\u534E\u5C71\u5F1F\u5B50"
+    Name: "\uD654\uC0B0\uC81C\uC790"
   - Id: 82
-    Name: "\u8861\u5C71\u5F1F\u5B50"
+    Name: "\uD615\uC0B0\uC81C\uC790"
   - Id: 83
-    Name: "\u6052\u5C71\u5F1F\u5B50"
+    Name: "\uD56D\uC0B0\uC81C\uC790"
   - Id: 84
-    Name: "\u5D69\u5C71\u5F1F\u5B50"
+    Name: "\uC22D\uC0B0\uC81C\uC790"
   - Id: 85
-    Name: "\u6CF0\u5C71\u5F1F\u5B50"
+    Name: "\uD0DC\uC0B0\uC81C\uC790"
   - Id: 86
-    Name: "\u9752\u57CE\u5F1F\u5B50"
+    Name: "\uCCAD\uC131\uC81C\uC790"
   - Id: 87
-    Name: "\u4E94\u6BD2\u6559\u5F92"
+    Name: "\uC624\uB3C5\uAD50\uB3C4"
   - Id: 88
-    Name: "\u65E5\u6708\u6559\u5F92"
+    Name: "\uC77C\uC6D4\uAD50\uB3C4"
   - Id: 89
-    Name: "\u6B27\u9633\u514B\u5A62\u5973"
+    Name: "\uAD6C\uC591\uADF9\uC2DC\uB140"
   - Id: 90
-    Name: "\u5929\u5C71\u5F1F\u5B50"
+    Name: "\uCC9C\uC0B0\uC81C\uC790"
   - Id: 91
-    Name: "\u5587\u561B"
+    Name: "\uB77C\uB9C8"
   - Id: 92
-    Name: "\u661F\u5BBF\u5F1F\u5B50"
+    Name: "\uC131\uC218\uC81C\uC790"
   - Id: 93
-    Name: "\u4E10\u5E2E\u5F1F\u5B50"
+    Name: "\uAC1C\uBC29\uC81C\uC790"
   - Id: 94
-    Name: "\u94C1\u638C\u5F1F\u5B50"
+    Name: "\uCCA0\uC7A5\uC81C\uC790"
   - Id: 95
-    Name: "\u5168\u771F\u5F1F\u5B50"
+    Name: "\uC804\uC9C4\uC81C\uC790"
   - Id: 96
-    Name: "\u5C11\u6797\u5F1F\u5B50"
+    Name: "\uC18C\uB9BC\uC81C\uC790"
   - Id: 97
-    Name: "\u795E\u9F99\u5F1F\u5B50"
+    Name: "\uC2E0\uB8E1\uAD50\uB3C4"
   - Id: 98
-    Name: "\u5DE8\u87D2"
+    Name: "\uD070 \uAD6C\uB801\uC774"
   - Id: 99
-    Name: "\u96EA\u602A"
+    Name: "\uC124\uAD34"
   - Id: 100
-    Name: "\u5927\u9CC4\u9C7C"
+    Name: "\uB300\uC545\uC5B4"
   - Id: 101
-    Name: "\u5927\u8718\u86DB"
+    Name: "\uD070 \uAC70\uBBF8"
   - Id: 102
-    Name: "\u83BD\u726F\u6731\u86E4"
+    Name: "\uB9DD\uACE0\uC8FC\uD569"
   - Id: 103
-    Name: "\u5343\u5E74\u51B0\u8695"
+    Name: "\uCC9C\uB144\uBE59\uC7A0"
   - Id: 104
-    Name: "\u795E\u96D5"
+    Name: "\uC2E0\uC870"
   - Id: 105
-    Name: "\u638C\u67DC"
+    Name: "\uC7A5\uAC70"
   - Id: 106
-    Name: "\u5E97\u5C0F\u4E8C"
+    Name: "\uC810\uC18C\uC774"
   - Id: 107
-    Name: "\u4E66\u4FE1"
+    Name: "\uC11C\uC2E0"
   - Id: 108
-    Name: "\u5927\u592B"
+    Name: "\uB300\uBD80"
   - Id: 109
-    Name: "\u738B\u8BED\u5AE3"
+    Name: "\uC655\uC5B4\uC5B8"
   - Id: 110
-    Name: "\u626B\u5730\u50E7"
+    Name: "\uC18C\uC9C0\uC2B9"
   - Id: 111
-    Name: "\u97E6\u5C0F\u5B9D"
+    Name: "\uC704\uC18C\uBCF4"
   - Id: 112
-    Name: "\u970D\u9752\u6850"
+    Name: "\uACFD\uCCAD\uB3D9"
   - Id: 113
-    Name: "\u970D\u9752\u6850\u968F\u4ECE"
+    Name: "\uACFD\uCCAD\uB3D9\uC2DC\uC885"
   - Id: 114
-    Name: "\u8F6F\u4F53\u5A03\u5A03"
+    Name: "\uC9C0\uAD00\uB9C8\uC2A4\uCF54\uD2B8"
   CameraOffsetNear: {x: 0, y: 0, z: 0}
   CameraOffsetFar: {x: 0, y: 0, z: 0}

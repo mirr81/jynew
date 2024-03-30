@@ -4,9 +4,9 @@ if InTeam(53) == true then goto label0 end;
     if JudgeScenePic(-2, 2, 6298, 1, 0) then goto label1 end;
         do return end;
 ::label1::
-        Talk(53, "兄弟，我决定要留下来陪神仙姊姊，服侍她。你自己走吧。", "talkname53", 1);
-        Talk(0, "段兄，这王姑娘不是你的神仙姊姊，更何况人家喜欢的是她表哥，别自作多情了。", "talkname0", 1);
-        Talk(53, "兄弟，我心意已决，你自己保重吧。", "talkname53", 1);
+        Talk(53, "이 형， 난 여기 남아서 신선 누님을 모시기로 결심했으니 혼자 떠나시오。", "talkname53", 1);
+        Talk(0, "단 형， 왕 낭자는 당신의 신선 누님이 아니오。더군다나 왕 낭자가 좋아하는 사람은 그녀의 사촌 오빠라고。 이만 단념해…", "talkname0", 1);
+        Talk(53, "내 결심은 안 변한다！ 이 형， 몸조리 잘 하시오。", "talkname53", 1);
         ModifyEvent(-2, -2, 0, 0, -1, -1, -1, -1, -1, -1, -2, -2, -2);
         ModifyEvent(-2, 3, 1, 1, 492, -1, -1, 6310, 6310, 6310, -2, -2, -2);
         jyx2_ReplaceSceneObject("", "NPC/段誉", "1");--段誉

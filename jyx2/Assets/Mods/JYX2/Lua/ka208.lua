@@ -1,6 +1,6 @@
-Talk(22, "小兄弟，我看你武功不错，你我二人一起称霸这江湖，如何？", "talkname22", 0);
-Talk(0, "你武功那么差，我看你还是安份一点。", "talkname0", 1);
-Talk(22, "上回是老朽太轻敌了，你还想试试看吗？", "talkname22", 0);
+Talk(22, "젊은이， 무공이 훌륭하던데 나와 힘을 합쳐 강호를 제패하지 않겠나？", "talkname22", 0);
+Talk(0, "무공이 형편없으면 분수라고 알아야지！", "talkname0", 1);
+Talk(22, "저번엔 내가 방심했다。 다시 싸워보겠나？", "talkname22", 0);
 if AskBattle() == true then goto label0 end;
     do return end;
 ::label0::

@@ -30,7 +30,7 @@ namespace Jyx2.MOD.ModV2
             return base.GetDesc();
         }
 
-        protected override string Tag => "手动安装";
+        protected override string Tag => "Manual";//"手动安装";
     }
     
     public class GameModManualInstalledLoader : GameModLoader

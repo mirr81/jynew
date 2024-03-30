@@ -31,7 +31,7 @@ namespace Jyx2.MOD.ModV2
             return await AssetBundle.LoadFromFileAsync(path);
         }
 
-        protected override string Tag => "原生";
+        protected override string Tag => "Native";//"原生";
 
         private static string GetUrlFromStreamingAssets(string file)
         {

@@ -1,18 +1,18 @@
-Talk(59, "少侠近来如何？", "talkname59", 0);
+Talk(59, "소협은 요즘 어때요？", "talkname59", 0);
 if AskJoin () == true then goto label0 end;
-    Talk(0, "一切还好，你们还好吧？", "talkname0", 1);
-    Talk(59, "嗯。", "talkname59", 0);
-    Talk(0, "你们俩真是令人羡慕的神仙侠侣。", "talkname0", 1);
+    Talk(0, "다 좋아요！ 당신들은요？", "talkname0", 1);
+    Talk(59, "좋아요。", "talkname59", 0);
+    Talk(0, "두 분 부부는 정말 신선 같은 한 쌍이로군요。", "talkname0", 1);
     do return end;
 ::label0::
-    Talk(0, "近日旅途有些不顺，此次前来是想请龙姑娘加入，助我一臂之力。", "talkname0", 1);
-    Talk(59, "好啊，我夫妇俩受你这么大的恩惠，理应帮忙你一些。", "talkname59", 0);
-    Talk(0, "真是不好意思，打扰了你跟杨兄的清静。", "talkname0", 1);
-    Talk(59, "没有关系，等解决了你的问题后，再回来古墓就好了。", "talkname59", 0);
-    Talk(0, "谢谢你的帮忙。", "talkname0", 1);
+    Talk(0, "용낭자， 문제가 생겼어요。 낭자의 도움이 꼭 필요한데， 같이 가주시겠어요？", "talkname0", 1);
+    Talk(59, "좋아요！ 우리 부부는 은혜를 입었는데 당연히 보답해야죠。", "talkname59", 0);
+    Talk(0, "양 형과의 좋은 시간을 방해해서 정말 미안하게 됐습니다。", "talkname0", 1);
+    Talk(59, "천만에요！ 소협의 문제를 해결한 뒤 다시 돌아오죠。 출발해요。", "talkname59", 0);
+    Talk(0, "도와줘서 고마워요。", "talkname0", 1);
     DarkScence();
     if TeamIsFull() == false then goto label1 end;
-        Talk(59, "你的队伍已满，我无法加入。", "talkname59", 0);
+        Talk(59, "소협은 동료가 많으니 지금은 제가 양보하죠。", "talkname59", 0);
         do return end;
 ::label1::
     DarkScence();

@@ -113,7 +113,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -432,7 +432,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u5173\u95ED"
+  m_Text: "\uB2EB\uAE30"
 --- !u!114 &3567827186004018414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -600,7 +600,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.0007185532}
+  m_AnchoredPosition: {x: 0, y: -0.000029416397}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &3567827186410950861
@@ -833,7 +833,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3567827187374478004
 RectTransform:
   m_ObjectHideFlags: 0
@@ -936,7 +936,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 3567827185573708130}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.9999929
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1020,7 +1020,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "MOD\u7BA1\u7406\u5668"
+  m_Text: "MOD\uAD00\uB9AC\uC790"
 --- !u!114 &3567827187392172129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1112,7 +1112,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "\u63D0\u793A\uFF1A\u5173\u95ED\u540E\u91CD\u542F\u6E38\u620F\u5373\u53EF\u751F\u6548"
+  m_Text: "\uD78C\uD2B8 : \uC885\uB8CC \uD6C4 \uAC8C\uC784\uC744 \uC7AC\uC2DC\uC791\uD574\uC57C
+    \uC801\uC6A9\uB429\uB2C8\uB2E4."
 --- !u!114 &2518751161337659196
 MonoBehaviour:
   m_ObjectHideFlags: 0

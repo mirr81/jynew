@@ -1,9 +1,9 @@
 if HaveItem(173) == false then goto label0 end;
     ModifyEvent(-2, -2, -2, -2, -1, -1, -1, -2, -2, -2, -2, -2, -2);
-    Talk(0, "咦！头比较不晕了，反而有股淡淡的微香，这朵蓝花真是神奇。", "talkname0", 1);
+    Talk(0, "괜찮아졌어！ 이젠 오히려 은은한 향기가 나는 것 같아。 이 남푸른 꽃이 정말 신통하군！", "talkname0", 1);
     do return end;
 ::label0::
-    Talk(0, "啊！又闻到这香味了，看来我又得昏倒了。", "talkname0", 1);
+    Talk(0, "아！ 또 이 향기를 맡았구나， 보아하니 나는 또 기절할 것 같아…", "talkname0", 1);
     jyx2_PlayTimeline("[Timeline]ka37_药王山庄_晕倒", 0, false);
     jyx2_Wait(2);
     PlayAnimation(-1, 5974, 5992);
@@ -15,6 +15,6 @@ if HaveItem(173) == false then goto label0 end;
     LightScence();
     jyx2_Wait(1.2);
     PlayAnimation(-1, 6014, 6024);
-    Talk(0, "又昏倒了，看来我得想想办法才是。", "talkname0", 1);
+    Talk(0, "또 쓰러졌구나， 기절하기 전에 무슨 방법을 찾아야 해！", "talkname0", 1);
     jyx2_StopTimeline("[Timeline]ka37_药王山庄_苏醒");
 do return end;

@@ -1,2 +1,2 @@
-Talk(64, "记得到我百花谷来。", "talkname64", 0);
+Talk(64, "꼭 백화곡에 들러라。", "talkname64", 0);
 do return end;

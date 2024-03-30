@@ -1,8 +1,8 @@
-Talk(82, "阁下若无请帖，还请离开。", "talkname82", 0);
+Talk(82, "귀하께서 청첩장이 없으시면 떠나주십시오。", "talkname82", 0);
 if AskBattle() == true then goto label0 end;
     do return end;
 ::label0::
-    Talk(0, "说不得只好打了。", "talkname0", 1);
+    Talk(0, "그럼 할 수 없지。 실력으로 입장하는 수밖에。", "talkname0", 1);
     if TryBattle(27) == true then goto label1 end;
         Dead();
         do return end;

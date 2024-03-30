@@ -23,8 +23,8 @@ end
 function FirstTimeAccessScene()
     print("第一次进入无名山谷..")
     
-    Talk(0, "唔。。。好困。。。。咦，这里是什么地方？")
-    Talk(0, "前面好像有人的样子，去问问看吧。。。")
+    Talk(0, "너무 졸리다. 졸려 。。。。 여기가 어디야?")
+    Talk(0, "앞에 사람이 있는 것 같으니 가서 물어보자。。。")
 
     AddHpWithoutHint(0, 300) --默认加300血
     
@@ -40,17 +40,17 @@ function TalkNanXian()
     local roleId = 73
 
     if(nanXianFlag == 0) then
-        Talk(roleId, "年轻人，你来了。");
-        Talk(0, "这里是什么情况？")
+        Talk(roleId, "젊은이, 여기 있군.")
+        Talk(0, "무슨 일이죠?")
         
-        Talk(roleId, "这里是无名谷，这里的人都是被困在这里的，我们都是被困在这里的。");
+        Talk(roleId, "여긴 이름없는 자들의 계곡이고, 우리 모두 여기에 갇혔네.")
         
-        Talk(0, "那我们要怎么办？")
-        Talk(roleId, "只有战斗胜利，才能获得出去的机会。");
+        Talk(0, "그럼 이제 어떻게 하죠?")
+        Talk(roleId, "전투에서 이기는 것만이 빠져나갈 수 있는 유일한 방법인 것 같네.")
 
-        Talk(0, "额，为什么要战斗，我们的敌人是谁？")
-        Talk(roleId, "一言难尽，你准备好了就来找我吧。旁边那个怪人也是跟我一起被困在这里的，不过一直嘟嘟囔囔不知道在说什么。。。");
-        Talk(roleId, "或许他跟这个困境有什么关系也说不定…… ");
+        Talk(0, "음, 왜 싸우는거고, 적이 누구죠?")
+        Talk(roleId, "말하기 어렵지만, 준비되면 날 보러 오게. 내 옆에 있는 저 괴짜도 나랑 같이 갇혀있는데 계속 뭔가를 중얼거려...")
+        Talk(roleId, "저 사람도 이 난처한 상황과 관련이 있을지도 몰라 ...... ")
         
         scene_api.Dark()
         scene_api.SetActive("NPC/Beichou" , true) --把北丑显示出来
@@ -60,14 +60,14 @@ function TalkNanXian()
     elseif(nanXianFlag == 1) then
         
         local level = scene_api.GetInt("Level") + 1
-        Talk(roleId, "当前是第 <color=red>"..level.."</color> 层，你准备好了吗？\n记住：每次挑战胜利将<color=red>自动存档</color>，不容反悔。")
+        Talk(roleId, "<color=red>"..level.."</color>번째 단계에 도전할 준비가 되었나? \n(기억하세요: 각 단계에서 승리하면 <color=red>자동 저장되며</color> 되돌릴 수 없습니다.)")
         
-        local ret = ShowYesOrNoSelectPanel("开始下一场挑战？")
+        local ret = ShowYesOrNoSelectPanel("다음 도전을 시작하시겠습니까?")
         if(ret) then
             NextBattle()
         end
     elseif(nanXianFlag == 2) then
-        Talk(roleId, "先去找怪人领奖励吧!");  
+        Talk(roleId, "먼저 괴짜에게 보상을 받으러 가자!");  
     end
 end
 
@@ -162,7 +162,7 @@ function NextBattle()
         --增加层数
         scene_api.SetInt("Level", level + 1)
 
-        Talk(74, "噫唏嘘，来找吾领取汝之奖励！")
+        Talk(74, "나한테 와서 보상을 받아라!")
         RestTeam()
         scene_api.SetInt("Beichou", 2)
         scene_api.SetInt("Nanxian", 2)
@@ -235,20 +235,20 @@ function TalkBeichou()
 
     if(flag == 0) then
         Talk(roleId, "噫唏嘘！")
-        Talk(0, "什么鬼……")
-        Talk(roleId, "汝可在吾之前，不知道吾是谁？")
-        Talk(0, "这个神经病看起来有点问题，我还是尽量少惹他吧。。。")
-        Talk(roleId, "此间战斗仅可<color=red>自动进行</color>，最多上阵<color=red>6</color>名队友，好好规划汝之队伍！")
-        Talk(roleId, "每完成一次战斗和奖励选择都会<color=red>自动存档</color>！所有来此大侠须直面人生，无法反悔！")
+        Talk(0, "대체 뭐야 ......")
+        Talk(roleId, "내 앞에서 내가 누군지 모르겠느냐?")
+        Talk(0, "이 싸이코는 문제가 좀 있는 것 같으니 건드리지 않는 게 좋겠어....")
+        Talk(roleId, "전투는 최대 <color=red>6명</color>의 팀원과 함께 <color=red>자동</color>으로만 전투를 치를 수 있으므로 팀을 잘 계획해라!")
+        Talk(roleId, "완료한 전투와 보상은 <color=red>자동 저장</color>된다! 이곳에 오는 모든 전사들은 삶과 정면으로 맞서야 하며, 물러설 수 없다!")
         
-        Talk(0, "行吧，我试试看.. 还有什么么？")
-        Talk(roleId, "噫唏嘘，危乎高哉！此间秘密不可语...")
-        Talk(0, "看来还是先不要理这个怪人了……")
+        Talk(0, "알았어요, 해볼게요... 다른 건요?")
+        Talk(roleId, "噫唏嘘，위험해! 비밀은 말하지 않는 것이 좋아...")
+        Talk(0, "지금은 이 괴짜를 무시하는 것이 좋을 것 같습니다 ......")
         
         scene_api.SetInt("Beichou", 1)
     elseif(flag == 1) then
-        Talk(roleId, "噫唏嘘，危乎高哉！此间秘密不可语...")
-        Talk(0, "还是先不要理这个怪人了……")
+        Talk(roleId, "噫唏嘘，위험해! 비밀은 말하지 않는 것이 좋아...")
+        Talk(0, "지금은 이 괴짜를 무시하는 것이 좋습니다 ......")
     elseif(flag == 2) then
         print("发奖励..")
 
@@ -266,10 +266,10 @@ function TalkBeichou()
         --只有奇数关可以选队友
         local ret = 3
         if(level % 2 == 1) then
-            ret = ShowSelectPanel(roleId, "汝欲神兵、秘笈，还是队友？\n选择后将<color=red>自动存档</color>，不容反悔。", {item.Name, book.Name, teamMate.Name, "再想想"})
+            ret = ShowSelectPanel(roleId, "신병, 비급을 원하나, 아니면 동료를 원하나?\n (선택한 후 <color=red>자동 저장</color>됩니다.)", {item.Name, book.Name, teamMate.Name, "다시 생각해 본다."})
         else
             ::label_retry::
-            ret = ShowSelectPanel(roleId, "汝欲神兵、秘笈？\n选择后将<color=red>自动存档</color>，不容反悔。", {item.Name, book.Name, "<color=grey>(暂不可选队友)</color>", "再想想"})
+            ret = ShowSelectPanel(roleId, "신병, 비급을 원하나?\n (선택한 후 <color=red>자동 저장</color>됩니다.)", {item.Name, book.Name, "<color=grey>(지금은 팀원을 선택할 수 없습니다.)</color>", "다시 생각해 본다."})
             if(ret == 2) then
                 goto label_retry
             end 
@@ -291,7 +291,7 @@ function TalkBeichou()
         ::label_end::
         
     elseif(flag == 3) then
-        Talk(roleId, "噫唏嘘，危乎高哉！此间秘密不可语...")
+        Talk(roleId, "噫唏嘘，위험해! 비밀은 말하지 않는 것이 좋아...")
         Talk(0, "……")
     end
 end

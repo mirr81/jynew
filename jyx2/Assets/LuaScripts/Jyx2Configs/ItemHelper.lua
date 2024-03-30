@@ -24,7 +24,7 @@ function helpers.IsArmor(cfg)
 end
 
 function helpers.IsBook(cfg)
-    return (cfg.ItemType == 2)
+    return (cfg.ItemType == 2 or cfg.ItemType == 5)
 end
 
 function helpers.NoItemUser(cfg)

@@ -1,16 +1,16 @@
-Talk(0, "段兄，你在这过的还好吧？", "talkname0", 1);
+Talk(0, "단형， 여기서 잘 있었소？", "talkname0", 1);
 if InTeam(76) == true then goto label0 end;
-    Talk(53, "能天天在这陪着神仙姊姊，要我做牛做马我都愿意。", "talkname53", 0);
+    Talk(53, "매일 이곳에서 신선 누님과 함께 있을 수만 있다면， 나에게 소가 되고 말이 되라고 해도 나는 다 원한다。", "talkname53", 0);
     do return end;
 ::label0::
-    Talk(53, "兄弟，让我加入你吧，我想跟王姑娘在一起。", "talkname53", 0);
+    Talk(53, "이 형， 왕낭자 곁에 같이 있게 해주시오。 제발 부탁드리오…", "talkname53", 0);
     if AskJoin () == true then goto label1 end;
-        Talk(0, "很抱歉，段兄。王姑娘的风采也挺令小弟着迷的。", "talkname0", 1);
+        Talk(0, "미안하오 단 형。 나도 왕낭자의 아름다움에 반해버렸소。", "talkname0", 1);
         do return end;
 ::label1::
-        Talk(0, "段兄你真是个痴情种子，我们当然是一起走喽！", "talkname0", 1);
+        Talk(0, "못 말릴 순정파로군。 졌다 졌어。 함께 출발하지！", "talkname0", 1);
         if TeamIsFull() == false then goto label2 end;
-            Talk(53, "你的队伍已满，我无法加入。", "talkname53", 0);
+            Talk(53, "이 형， 동료가 너무 많소。 어떻게든 왕 낭자의 곁에 있게 해주시오。", "talkname53", 0);
             do return end;
 ::label2::
             DarkScence();

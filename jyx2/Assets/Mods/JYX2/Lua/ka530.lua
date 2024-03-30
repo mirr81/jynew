@@ -1,8 +1,8 @@
 if InTeam(51) == false then goto label0 end;
-    Talk(51, "等一下！", "talkname51", 0);--对话显示在上方
+    Talk(51, "잠깐！", "talkname51", 0);--对话显示在上方
 ::label0::
     if InTeam(51) == true then goto label1 end;
-        Talk(51, "等一下！", "talkname51", 1);--对话显示在下方
+        Talk(51, "잠깐！", "talkname51", 1);--对话显示在下方
 ::label1::
         DarkScence();
         ModifyEvent(-2, 20, 0, 0, -1, -1, -1, -1, -1, -1, -2, -2, -2);
@@ -26,18 +26,18 @@ if InTeam(51) == false then goto label0 end;
 ::label4::
 ::label5::
                         LightScence();
-                        Talk(0, "慕容公子，你要做什么？", "talkname0", 1);
-                        Talk(51, "我决定今天要在武林同道面前揭发乔峰真实的身份……", "talkname51", 0);
-                        Talk(0, "慕容公子，得饶人处且饶人。", "talkname0", 1);
-                        Talk(51, "哼！你得到书了，而我呢？大燕复国的希望都在我身上……", "talkname51", 0);
-                        Talk(0, "那，恕在下得罪了。", "talkname0", 1);
+                        Talk(0, "모용 공자， 무슨 짓이오？", "talkname0", 1);
+                        Talk(51, "오늘 무림인들 앞에서 교봉의 비밀을 낱낱이 밝히겠다！", "talkname51", 0);
+                        Talk(0, "모용 공자， 그만 회개하시오…", "talkname0", 1);
+                        Talk(51, "흥！ 넌 결국 책을 얻었지만 난 무엇을 얻었지？ 내 어깨엔 대연국 수복의 희망이 걸려있다。", "talkname51", 0);
+                        Talk(0, "그럼， 실례하겠습니다。", "talkname0", 1);
                         if TryBattle(85) == true then goto label6 end;
                             Dead();
                             do return end;
 ::label6::
                             LightScence();
-                            Talk(0, "慕容公子，我不杀你，这件事还请你忘记，否则……", "talkname0", 1);
-                            Talk(51, "哼！", "talkname51", 0);
+                            Talk(0, "목숨은 살려 줄 테니 이제 그만 포기하시오。 그렇지 않으면……", "talkname0", 1);
+                            Talk(51, "흥！", "talkname51", 0);
                             AddRepute(3);
                             AddEthics(3);
                             DarkScence();
@@ -52,13 +52,13 @@ if InTeam(51) == false then goto label0 end;
                                 if JudgeScenePic(-2, 23, 6298, 1, 0) then goto label8 end;--如果前面显示王语嫣，跳转label8
                                     do return end;
 ::label8::
-                                    Talk(0, "王姑娘，你怎么还在这，你表哥已经走了。", "talkname0", 1);
-                                    Talk(109, "唉！我表哥为了大燕复国之事，已经发疯了。在他一生之中，便是梦想要做大燕皇帝。这也难怪，因为他慕容氏世世代代，做的便是这个梦。他祖宗几十代做下来的梦，传到他身上，怎又能盼他觉醒呢？我表哥他本性并不坏，只不过为了想做大燕皇帝，行事才会变得如此不择手段……", "talkname109", 0);
-                                    Talk(0, "可是你不是一直都喜欢着他吗……", "talkname0", 1);
-                                    Talk(109, "在我表哥心中，复兴大业一直都是他心中最重要的事，儿女私情只不过……", "talkname109", 0);
+                                    Talk(0, "응？ 왕 낭자， 모용 공자는 떠났는데 왜 여기 남아 있소？", "talkname0", 1);
+                                    Talk(109, "아！ 오라버니는 나라 수복에 눈이 돌아 미쳐 있어요。 모용 가문은 대대로 대연국 황제가 되는 꿈을 꾸었으니 오라버니만을 탓할 수도 없죠… 몇 백 년 동안 내려온 꿈을 어찌 하루아침에 깰 수가 있겠어요？ 오라버니는 나쁜 사람이 아닌데 황제가 되는 꿈에 빠져 하지 말아야 할 행동에도 서슴이 없어요。", "talkname109", 0);
+                                    Talk(0, "낭자는 줄곧 모용 공자를 사모하지 않았어요？", "talkname0", 1);
+                                    Talk(109, "오라버니의 마음속엔 황제가 되는 일만 존재할 뿐， 절 바라봐 줄 여유는 존재하지 않았어요…", "talkname109", 0);
                                     if JudgeScenePic(-2, 24, 6314, 46, 0) then goto label9 end;--如果上面显示段誉跳转label9
-                                        Talk(0, "王姑娘，你别烦恼，或许过阵子你表哥就会想通了。", "talkname0", 1);
-                                        Talk(109, "希望如此。那我先回燕子坞了。公子，告辞！", "talkname109", 0);
+                                        Talk(0, "왕 낭자， 고민하지 마세요。 아마 시간이 지나면 모용 공자도 꺠달을 겁니다。", "talkname0", 1);
+                                        Talk(109, "그랬으면 좋겠어요。 그럼 저는 먼저 연자오로 갈게요。 도련님， 안녕히 계세요！", "talkname109", 0);
                                         DarkScence();
                                         if InTeam(76) == false then goto label10 end;
                                             Leave(76);
@@ -70,12 +70,12 @@ if InTeam(51) == false then goto label0 end;
                                             LightScence();
                                             do return end;
 ::label9::
-                                            Talk(53, "王姑娘，你别烦恼，我去劝劝你表哥，让他对你好一点……", "talkname53", 0);
-                                            Talk(109, "段公子，我真是糊涂透顶，你一直待我这么好，我……我却……直到此刻我方才明白，这世上谁才是真的爱我，怜我的人…………", "talkname109", 0);
-                                            Talk(0, "恭喜段兄，真心终于打动了美人芳心。不知二位今后有何打算？", "talkname0", 1);
-                                            Talk(109, "我曾听段郎说，无量山洞中有一玉像，像极了我。我想先和段郎去那一游。", "talkname109", 0);
-                                            Talk(0, "那，祝你们一路顺风了。", "talkname0", 1);
-                                            Talk(53, "兄弟，你也保重。", "talkname53", 0);
+                                            Talk(53, "왕 낭자…오…오라버니가 정신을 차… 차리도록 제가 자… 잘 말 해 볼게요………", "talkname53", 0);
+                                            Talk(109, "단공자， 난 정말 바보 같아요。 당신이야말로 좋은 분인데… 난…… 날 가장 아끼고 사랑해 주는 이가 누군지 오늘에야 알았어요。", "talkname109", 0);
+                                            Talk(0, "단 형！ 미인의 마음을 얻은 걸 축하드려요。 '이것들이！ 젠장！ ' 두 분은 이제 어떻게 할 생각이죠？", "talkname0", 1);
+                                            Talk(109, "단 공자의 말에 의하면， 무량산의 어느 동굴에 나와 똑같은 조각상이 있다니 구경하러 가고 싶어요。", "talkname109", 0);
+                                            Talk(0, "그럼 두 분 여행 잘 다녀오세요。", "talkname0", 1);
+                                            Talk(53, "이 형도 몸 조심해。", "talkname53", 0);
                                             DarkScence();
                                             if InTeam(53) == false then goto label11 end;
                                                 Leave(53);
@@ -97,7 +97,7 @@ if InTeam(51) == false then goto label0 end;
                                                     jyx2_ReplaceSceneObject("42", "NPC/段誉", "1");--段誉出现
 
                                                     LightScence();
-                                                    Talk(0, "别人都已有情人终成眷属，而我呢？唉！别想这么多了，走吧！", "talkname0", 1);
+                                                    Talk(0, "모두들 짝을 찾았는데 도대체 난 뭐람？ 아！ 메타버스의 세상에서도 난 솔로구나！ 헛생각 말고 가자！", "talkname0", 1);
                                                     AddEthics(5);
                                                     do return end;
 do return end;

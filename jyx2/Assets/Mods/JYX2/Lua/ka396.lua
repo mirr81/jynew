@@ -3,33 +3,33 @@ if UseItem(134) == true then goto label0 end;
 ::label0::
     AddItemWithoutHint(134, -1);
     AddEthics(4);
-    Talk(0, "杨兄，你快将这服下。", "talkname0", 1);
-    Talk(58, "这是什么？", "talkname58", 0);
-    Talk(0, "这是生长在情花丛旁的断肠草。我曾听人说过，凡毒蛇出没之处，七步之内必有解毒之药，其他毒物，无不如此。这是天地间万物相生相克的至理。这断肠草正好生长在情花树旁，虽说此草具有剧毒，但我反覆思量，此草以毒攻毒正是情花的对头克星。服这毒草自是冒极大险，但反正已无药可救，咱们就死马当活马医，试它一试。", "talkname0", 1);
-    Talk(58, "好，我便服这断肠草试试，倘若无效，十六年后，请少侠告知我那苦命的妻子罢！", "talkname58", 0);
-    Talk(58, "……啊……", "talkname58", 0);
-    Talk(0, "杨兄怎么了？", "talkname0", 1);
-    Talk(58, "…………", "talkname58", 0);
+    Talk(0, "양 형！ 이걸 드셔보세요！", "talkname0", 1);
+    Talk(58, "이 게 뭐지？", "talkname58", 0);
+    Talk(0, "정화 옆에서 자라는 단장초예요。 독사가 출몰하는 곳에서 일곱 걸음 떨어진 곳에 해독제가 있다 들었죠。 독은 독으로 고치는 게 만물의 이치니까！ 정화 옆에 자란 단장초는 독성이 강하다지만 독은 독으로 고칠 수 있으니 이 게 정화독을 제거할 겁니다！ 독을 못 고치면 어차피 목숨을 잃는 상황이니 큰맘 먹고 단장초를 먹어봐요。", "talkname0", 1);
+    Talk(58, "좋다。 단장초를 먹겠어。 내가 죽으면 16년 뒤， 아내에게 말을 전해주게。", "talkname58", 0);
+    Talk(58, "…아 …", "talkname58", 0);
+    Talk(0, "좀 어때요？", "talkname0", 1);
+    Talk(58, "……", "talkname58", 0);
     DarkScence();
     ModifyEvent(-2, -2, -2, -2, 397, -1, -1, 6186, 6186, 6186, -2, -2, -2);--by fanyu|杨过贴图替换。场景07-编号06
     jyx2_SwitchRoleAnimation("NPC/杨过", "Assets/BuildSource/AnimationControllers/备份/YangguoController.controller");--尽量不要增加新trigger
     LightScence();
-    Talk(58, "我杨某这条命是少侠你救回来的。", "talkname58", 0);
-    Talk(0, "你身上的毒质当真都解了？还好还好，我刚真捏了把冷汗。", "talkname0", 1);
-    Talk(58, "这次真谢谢少侠的帮忙，让杨某从鬼门关回来。", "talkname58", 0);
-    Talk(0, "不知杨兄今后有何打算？", "talkname0", 1);
-    Talk(58, "我也不知道，但总是要保持着健康，待十六年后与我妻子相见。对了，我这里有瓶玉蜂浆，就送给兄台好了。", "talkname58", 0);
+    Talk(58, "자네가 양 모의 목숨을 구해줬군。", "talkname58", 0);
+    Talk(0, "정화독이 없어졌나요？ 잘 됐군！ 아까는 놀라서 식은땀이 다 났네… 휴", "talkname0", 1);
+    Talk(58, "저승의 문턱에 있던 날 구해준 은혜는 평생 잊지 않겠네。", "talkname58", 0);
+    Talk(0, "앞으로 어떡할 겁니까？", "talkname0", 1);
+    Talk(58, "모르겠어。 중요한 건 16년 뒤 용아와 상봉하기 위해 어떻게든 건강하게 살아있어야 한다는 거야。 아 참！ 옥봉장을 형제에게 주마。", "talkname58", 0);
     AddItem(124, 1);
     if AskJoin () == true then goto label1 end;
-        Talk(0, "那杨兄就好好休养吧，过些时候我再来看你。", "talkname0", 1);
+        Talk(0, "다시 보러 올 테니， 건강하게 잘 지내고 계세요。", "talkname0", 1);
         do return end;
 ::label1::
-        Talk(0, "不知杨兄是否有意与我为伴云游各地，一览这五岳三川的风貌。", "talkname0", 1);
+        Talk(0, "양 형， 저와 함께 천하를 돌며 절경도 구경하고 모험도 하지 않겠어요？", "talkname0", 1);
         if TeamIsFull() == false then goto label2 end;
-            Talk(58, "你的队伍已满，我无法加入。", "talkname58", 0);
+            Talk(58, "형제의 동료가 많으니 나는 다음에 함께 하겠네。", "talkname58", 0);
             do return end;
 ::label2::
-            Talk(58, "好啊！或许旅途中会有龙儿的下落也说不定。", "talkname58", 0);
+            Talk(58, "좋다！ 어쩌면 용아의 소식을 들을지도 모르니까。", "talkname58", 0);
             DarkScence();
             ModifyEvent(-2, -2, 0, 0, -1, -1, -1, -1, -1, -1, -2, -2, -2);--by fanyu|杨过加入队伍。场景07-编号06
             jyx2_ReplaceSceneObject("", "NPC/杨过", ""); 

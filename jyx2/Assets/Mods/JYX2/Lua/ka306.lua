@@ -1,11 +1,11 @@
-Talk(29, "怎么？兄台回心转意了吗？", "talkname29", 0);
+Talk(29, "어때 마음을 바꿨나？", "talkname29", 0);
 if AskJoin () == false then goto label0 end;
-    Talk(0, "原来兄台有此雅好，与在下不谋而合。不妨咱俩一起结伴，在这江湖中好好的爽他一爽。", "talkname0", 1);
+    Talk(0, "형제의 고상한 취미는 나와 딱 맞는군！ 우리 둘이서 신나게 강호의 여인들을 품어보지 않겠나？", "talkname0", 1);
     if TeamIsFull() == false then goto label1 end;
-        Talk(29, "你的队伍已满，我无法加入。", "talkname29", 0);
+        Talk(29, "형제는 동료가 많으니 나는 혼자 예쁜이들과 놀겠네。", "talkname29", 0);
         do return end;
 ::label1::
-        Talk(29, "好！你这兄弟一点也不做作。不像其他假正经的家伙，只会以名门正派自居。要知“做那档事”是人心本能的欲望，何必刻意去掩饰呢？我喜欢你，我们就一起去游戏人间。", "talkname29", 0);
+        Talk(29, "좋았어！ 자네가 마음에 드는군！ 위선자인 모 명문 제자와는 달리 성격이 호탕하군。 여자를 좋아하는 건 인간의 본능인데 왜 감춰야 하지？ 우리 같이 인생을 즐겨보지 않겠나？", "talkname29", 0);
         DarkScence();
         ModifyEvent(-2, -2, 0, 0, -1, -1, -1, -1, -1, -1, -2, -2, -2);
         jyx2_ReplaceSceneObject("", "NPC/田伯光", "");  
@@ -16,18 +16,18 @@ if AskJoin () == false then goto label0 end;
         do return end;
 ::label0::
         if AskBattle() == true then goto label2 end;
-            Talk(0, "兄台自己玩好了，小弟没这份兴致。", "talkname0", 1);
-            Talk(29, "少装了，难不成你有“断袖之癖”。", "talkname29", 0);
+            Talk(0, "전 형， 얼른 와서 귀여미들 분위기 좀 띄워 봐요！", "talkname0", 1);
+            Talk(29, "웃기지 마！ 이 위선자야！ 넌 남자가 아니란 말이야？", "talkname29", 0);
             ModifyEvent(-2, -2, -2, -2, 306, -1, -1, -2, -2, -2, -2, -2, -2);
             do return end;
 ::label2::
-            Talk(0, "什么！你这采花淫贼，尽做这些伤天害理的勾当，今天让我撞见，算你倒霉。小侠我要为江湖除害。", "talkname0", 1);
+            Talk(0, "뭐라는 거야？ 음적아！ 하늘이 두렵지 않느냐！ 오늘 내 손에 걸렸으니 하늘을 대신해 너를 벌하겠다！", "talkname0", 1);
             if TryBattle(53) == true then goto label3 end;
                 Dead();
                 do return end;
 ::label3::
                 LightScence();
-                Talk(0, "今天先饶你不死，希望你改过向善。否则日后再叫我撞见，就“去你的势”，让你去做太监。", "talkname0", 1);
+                Talk(0, "목숨은 살려줄 테니 개과천선하길 바란다。 또다시 나쁜 짓을 범하다 눈에 띄면 내시로 만들 줄 알아라！", "talkname0", 1);
                 ModifyEvent(-2, -2, -2, -2, 305, -1, -1, -2, -2, -2, -2, -2, -2);
                 AddRepute(1);
 do return end;

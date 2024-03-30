@@ -39,7 +39,7 @@ namespace MOD.UI
 
         private readonly List<GameModBase> _allMods = new List<GameModBase>();
         
-        /// 所有注册的MOD加载器
+        /// 등록된 모든 MOD 로더
         private List<GameModLoader> _modLoaders = new List<GameModLoader>()
         {
             new GameModNativeLoader(),
@@ -48,7 +48,7 @@ namespace MOD.UI
 #endif
             new GameModManualInstalledLoader(),
 #if UNITY_STANDALONE
-            new GameModSteamWorkshopLoader(),
+            //new GameModSteamWorkshopLoader(),
 #endif
         };
         void Awake()
@@ -63,7 +63,7 @@ namespace MOD.UI
             m_DonateButton.onClick.AddListener(OnDonate);
             
 #if UNITY_STANDALONE
-            m_SteamWorkshopButton.gameObject.SetActive(true);
+            m_SteamWorkshopButton.gameObject.SetActive(false);
 #else
             m_SteamWorkshopButton.gameObject.SetActive(false);
 #endif
@@ -74,11 +74,11 @@ namespace MOD.UI
             }
             //增加一个对XLua生成代码的简单检测，提醒作者生成代码
 #if UNITY_EDITOR
-            string xluaGenDir = Path.Combine(Application.dataPath,"XLua/Gen");
-            if (Directory.GetFiles(xluaGenDir).Length == 0)
-            {
-                Debug.LogError("没有手动生成XLua代码，可能导致载入Mod出错。请查看项目手册！");
-            }
+            // string xluaGenDir = Path.Combine(Application.dataPath,"XLua/Gen");
+            // if (Directory.GetFiles(xluaGenDir).Length == 0)
+            // {
+            //     Debug.LogError("XLua 코드가 수동으로 생성되지 않아 Mod를 로드하는 데 오류가 발생할 수 있습니다.프로젝트 안내서를 보십시오!");
+            // }
 
 #endif
         }

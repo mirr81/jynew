@@ -31,7 +31,7 @@ namespace Jyx2
             var _sprite = await ResLoader.LoadAsset<Sprite>(path);
             return _sprite;
         }
-        public static void LoadAsyncForget(this Image image, string path)
+        public static async void LoadAsyncForget(this Image image, string path)
         {   
             LoadAsync(image,GetPicTask(path)).Forget();
         }
@@ -49,14 +49,14 @@ public static class Jyx2ResourceHelper
 {
     public static async UniTask Init()
     {
-        //模型池
+        //모델 풀
         var allModels = await ResLoader.LoadAssets<ModelAsset>("Assets/Models/");
         if (allModels != null)
         {
             ModelAsset.All = allModels;
         }
         
-        //技能池
+        //기술 풀
         var allSkills = await ResLoader.LoadAssets<Jyx2SkillDisplayAsset>("Assets/Skills/");
         if (allSkills != null)
         {
@@ -69,7 +69,7 @@ public static class Jyx2ResourceHelper
         //执行lua根文件
         LuaManager.Init(GlobalAssetConfig.Instance.rootLuaFile.text);
 
-        //初始化LuaScripts
+        //初始化LuaScripts3
         await InitLuaScripts();
         
         //基础配置表
@@ -102,7 +102,7 @@ public static class Jyx2ResourceHelper
 #if UNITY_EDITOR
         if (mod is GameModEditor editor)
         {
-            Debug.Log("自动更新Lua配置表");
+            Debug.Log("Lua 구성 테이블 자동 업데이트");
             // 生成Lua配置表
             var ModRootDir = RuntimeEnvSetup.CurrentModConfig.ModRootDir;
             ExcelToLua.ExportAllLuaFile($"{ModRootDir}/Configs", $"{ModRootDir}/Configs/Lua");
@@ -115,10 +115,10 @@ public static class Jyx2ResourceHelper
         var configs = await ResLoader.LoadAssets<TextAsset>("Assets/Configs/Lua/");
         if (configs.Count < 1)
         {
-            throw new Exception("没有找到配置表");
+            throw new Exception("구성 테이블을 찾을 수 없음");
         }
 
-        Debug.Log("载入的配置表数量: "+ configs.Count);
+        Debug.Log("로드된 구성 테이블 수: "+ configs.Count);
         var luaEnv = LuaManager.GetLuaEnv();
         foreach (var file in configs)
         {
@@ -126,7 +126,7 @@ public static class Jyx2ResourceHelper
                 luaEnv.DoString(System.Text.Encoding.UTF8.GetBytes(file.text), file.name);
             }
             catch{
-                Debug.LogError($"{file.name} 运行出错");
+                Debug.LogError($"{file.name} 실행 오류");
                 throw;
             }
         }

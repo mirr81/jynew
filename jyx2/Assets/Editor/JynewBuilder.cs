@@ -35,7 +35,7 @@ namespace Editor
             
             try
             {
-                string path = EditorUtility.SaveFolderPanel("选择输出目录", "..", defaultDirName);
+                string path = EditorUtility.SaveFolderPanel("Output derectory", "..", defaultDirName);
                 if (string.IsNullOrEmpty(path))
                     return;
                 
@@ -52,34 +52,41 @@ namespace Editor
                     Directory.Delete(StreamingAssetsDir, true);
                     Directory.CreateDirectory(StreamingAssetsDir);
                 }
-                
+
+                Debug.Log("jiin >> Build - BuildNativeModsIndexFiles");                
                 //生成原生MOD的索引文件
                 var nativeMods = BuildNativeModsIndexFiles(target);
 
                 //生成xlua
+                Debug.Log("jiin >> Build - Generator.GenAll()");
                 Generator.GenAll();
+                Debug.Log("jiin >> Build - EditorUtility.RequestScriptReload()");
                 EditorUtility.RequestScriptReload();
 
                 //在临时目录生成ab包
+                Debug.Log("jiin >> Build - GenerateAssetBundlesInTempDirectory()");
                 GenerateAssetBundlesInTempDirectory(target);
 
                 //拷贝主文件
+                Debug.Log("jiin >> Build - DoCopyCoreAssetBundles()");
                 DoCopyCoreAssetBundles();
                 
                 //拷贝MOD文件
+                Debug.Log("jiin >> Build - DoCopyNativeModFiles()");
                 DoCopyNativeModFiles(nativeMods);
                 
                 //打包
                 string buildPath = Path.Combine(path, defaultBuildFileName);
+                Debug.Log("jiin >> Build - BuildPlayer()");
                 BuildPipeline.BuildPlayer(EditorBuildSettings.scenes, buildPath, target, options);
 
                 //输出
-                Debug.Log($"<color=green>打包完成！目标平台={target} 生成位置={buildPath}</color>");
+                Debug.Log($"<color=green>Complete！Platform={target} Output path={buildPath}</color>");
                 Tools.openURL(path);
             }
             catch (Exception e)
             {
-                Debug.LogError("打包失败：" + e.ToString());
+                Debug.LogError("Build Failed：" + e.ToString());
             }
         }
 

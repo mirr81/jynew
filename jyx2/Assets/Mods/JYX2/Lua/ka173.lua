@@ -1,8 +1,8 @@
-Talk(21, "阁下又来我恒山派做什么？我定闲可是不承认这五岳派的。", "talkname21", 0);
+Talk(21, "항산파엔 왜 왔나？ 난 절대로 오악파를 인정하지 않겠다！", "talkname21", 0);
 if AskBattle() == true then goto label0 end;
     do return end;
 ::label0::
-    Talk(0, "好啊，你居然不承认我五岳派，看来得再教训教训你。", "talkname0", 1);
+    Talk(0, "그래， 네가 뜻밖에도 오악파를 인정하지 않으니， 다시 너를 혼내야 할 것 같다。", "talkname0", 1);
     if TryBattle(39) == true then goto label1 end;
         Dead();
         do return end;

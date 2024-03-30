@@ -1,2 +1,2 @@
-Talk(112, "请少侠小心。", "talkname112", 0);
+Talk(112, "소협， 조심하세요。", "talkname112", 0);
 do return end;

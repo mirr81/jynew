@@ -15,6 +15,7 @@ using Cinemachine;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using XLua;
 using UnityEngine.Playables;
 using Sirenix.Utilities;
@@ -83,7 +84,7 @@ namespace Jyx2
         /// <param name="callback"></param>
         public static void AskBattle(Action<bool> callback)
         {
-            ShowYesOrNoSelectPanel("是否与之过招？", callback);
+            ShowYesOrNoSelectPanel("전투하시겠습니까?", callback);
         }
         /// <summary>
         /// 询问是否邀入队伍
@@ -91,7 +92,7 @@ namespace Jyx2
         /// <param name="callback"></param>
         public static void AskJoin(Action<bool> callback)
         {
-            ShowYesOrNoSelectPanel("是否要求加入？", callback);
+            ShowYesOrNoSelectPanel("가입을 요청하시겠습니까?", callback);
         }
         /// <summary>
         /// 询问是否休息
@@ -99,7 +100,7 @@ namespace Jyx2
         /// <param name="callback"></param>
         public static void AskRest(Action<bool> callback)
         {
-            ShowYesOrNoSelectPanel("是否休息？<color=red>（温馨提示：受伤太重或中毒不回复）</color>", callback);
+            ShowYesOrNoSelectPanel("휴식하시겠습니까？<color=red>（힌트：부상이나 중독이 너무 심하면 회복할 수 없습니다）</color>", callback);
         }
         /// <summary>
         /// 打开韦小宝商店
@@ -142,7 +143,7 @@ namespace Jyx2
         /// <param name="callback"></param>
         public static void ShowEthics(Action callback)
         {
-            MessageBox.ShowMessage("你现在的品德指数为" + runtime.Player.Pinde, callback);
+            MessageBox.ShowMessage("당신의 현재 도덕 지수는 " + runtime.Player.Pinde, callback);
         }
         /// <summary>
         /// 显示声望值值
@@ -153,13 +154,13 @@ namespace Jyx2
         /// <param name="callback"></param>
         public static void ShowRepute(Action callback)
         {
-            MessageBox.ShowMessage("你现在的个人声望指数为" + runtime.Player.Shengwang, callback);
+            MessageBox.ShowMessage("당신의 현재 명성 지수는 " + runtime.Player.Shengwang, callback);
         }
         public static void ShowYesOrNoSelectPanel(string selectMessage, Action<bool> callback)
         {
             UniTask.Void(async () =>
             {
-                List<string> selectionContent = new List<string>() { "是", "否" };
+                List<string> selectionContent = new List<string>() { "예(Y)", "아니오(N)" };
                 StoryEngine.BlockPlayerControl = true;
                 await Jyx2_UIManager.Instance.ShowUIAsync(nameof(ChatUIPanel), ChatType.Selection, "0", selectMessage,
                     selectionContent, new Action<int>((index) =>
@@ -720,7 +721,7 @@ namespace Jyx2
             if (noDisplay != 0 && runtime.IsRoleInTeam(roleId))
             {
                 var skill = LuaToCsBridge.SkillTable[magicId];
-                StoryEngine.DisplayPopInfo(role.Name + "习得武学" + skill.Name);
+                StoryEngine.DisplayPopInfo(role.Name + ", " + skill.Name + "습득");
             }
         }
         /// <summary>
@@ -793,11 +794,11 @@ namespace Jyx2
             role.UnequipItem(item);
         }
         /// <summary>
-        /// 设置角色身上的一个武功
+        /// 设置角色身上的一个武功  캐릭터의 무공을 설정하다
         /// </summary>
         /// <param name="roleId">角色id</param>
-        /// <param name="magicIndexRole">要设置的角色武功数组的索引</param>
-        /// <param name="magicId">设置为指定武功的ID</param>
+        /// <param name="magicIndexRole">要设置的角色武功数组的索引</param> 설정할 인물 무공 배열의 인덱스
+        /// <param name="magicId">设置为指定武功的ID</param>    지정된 무공의 ID로 설정
         /// <param name="level">设置为指定武功经验</param>
         public static void SetOneMagic(int roleId, int magicIndexRole, int magicId, int level)
         {
@@ -997,7 +998,7 @@ namespace Jyx2
             int delta = role.AddAttr(attrName, v);
             if (dispName != null && dispName != "")
             {
-            StoryEngine.DisplayPopInfo(role.Name + dispName + (delta > 0 ? "增加" : "减少") + Math.Abs(delta));
+            StoryEngine.DisplayPopInfo(role.Name + dispName + (delta > 0 ? "증가" : "감소") + Math.Abs(delta));
             }
         }
 
@@ -1008,7 +1009,7 @@ namespace Jyx2
         /// <param name="v">变化量</param>
         public static void AddAptitude(int roleId, int v)
         {
-            AddAttr(roleId, "IQ", v, "资质");
+            AddAttr(roleId, "IQ", v, "자질");
         }
         /// <summary>
         /// 增加医疗
@@ -1017,7 +1018,7 @@ namespace Jyx2
         /// <param name="value"></param>
         public static void AddHeal(int roleId, int value)
         {
-            AddAttr(roleId, "Heal", value, "医疗");
+            AddAttr(roleId, "Heal", value, "의료");
         }
         /// <summary>
         /// 增加防御
@@ -1026,7 +1027,7 @@ namespace Jyx2
         /// <param name="value"></param>
         public static void AddDefence(int roleId, int value)
         {
-            AddAttr(roleId, "Defence", value, "防御");
+            AddAttr(roleId, "Defence", value, "방어");
         }
         /// <summary>
         /// 增加拳掌
@@ -1035,7 +1036,7 @@ namespace Jyx2
         /// <param name="value"></param>
         public static void AddQuanzhang(int roleId, int value)
         {
-            AddAttr(roleId, "Quanzhang", value, "拳掌");
+            AddAttr(roleId, "Quanzhang", value, "권장");
         }
         /// <summary>
         /// 增加耍刀
@@ -1044,7 +1045,7 @@ namespace Jyx2
         /// <param name="value"></param>
         public static void AddShuadao(int roleId, int value)
         {
-            AddAttr(roleId, "Shuadao", value, "耍刀");
+            AddAttr(roleId, "Shuadao", value, "도술");
         }
         /// <summary>
         /// 增加御剑
@@ -1053,7 +1054,7 @@ namespace Jyx2
         /// <param name="value"></param>
         public static void AddYujian(int roleId, int value)
         {
-            AddAttr(roleId, "Yujian", value, "御剑");
+            AddAttr(roleId, "Yujian", value, "검술");
         }
         /// <summary>
         /// 增加暗器
@@ -1062,7 +1063,7 @@ namespace Jyx2
         /// <param name="value"></param>
         public static void AddAnqi(int roleId, int value)
         {
-            AddAttr(roleId, "Anqi", value, "暗器");
+            AddAttr(roleId, "Anqi", value, "암기");
         }
         /// <summary>
         /// 增加奇门
@@ -1071,7 +1072,7 @@ namespace Jyx2
         /// <param name="value"></param>
         public static void AddQimen(int roleId, int value)
         {
-            AddAttr(roleId, "Qimen", value, "奇门");
+            AddAttr(roleId, "Qimen", value, "특수");
         }
         /// <summary>
         /// 增加武学常识
@@ -1080,7 +1081,7 @@ namespace Jyx2
         /// <param name="value"></param>
         public static void AddWuchang(int roleId, int value)
         {
-            AddAttr(roleId, "Wuxuechangshi", value, "武学常识");
+            AddAttr(roleId, "Wuxuechangshi", value, "무학상식");
         }
         /// <summary>
         /// 增加功夫带毒
@@ -1089,7 +1090,7 @@ namespace Jyx2
         /// <param name="value"></param>
         public static void AddAttackPoison(int roleId, int value)
         {
-            AddAttr(roleId, "AttackPoison", value, "功夫带毒");
+            AddAttr(roleId, "AttackPoison", value, "중독");
         }
         /// <summary>
         /// 增加抗毒
@@ -1098,7 +1099,7 @@ namespace Jyx2
         /// <param name="value"></param>
         public static void AddAntiPoison(int roleId, int value)
         {
-            AddAttr(roleId, "AntiPoison", value, "抗毒");
+            AddAttr(roleId, "AntiPoison", value, "해독");
         }
         /// <summary>
         /// 增加经验
@@ -1107,7 +1108,7 @@ namespace Jyx2
         /// <param name="value"></param>
         public static void AddExp(int roleId, int value)
         {
-            AddAttr(roleId, "Exp", value, "经验");
+            AddAttr(roleId, "Exp", value, "경험");
         }
         /// <summary>
         /// 增加经验，不提示
@@ -1147,7 +1148,7 @@ namespace Jyx2
         /// <param name="value"></param>
         public static void AddSpeed(int roleId, int value)
         {
-            AddAttr(roleId, "Qinggong", value, "轻功");
+            AddAttr(roleId, "Qinggong", value, "경공");
         }
         /// <summary>
         /// 增加内力
@@ -1161,7 +1162,7 @@ namespace Jyx2
             var v0 = r.MaxMp;
             r.MaxMp = Tools.Limit(v0 + value, 0, GameConst.MAX_ROLE_MP);
             r.Mp = Tools.Limit(r.Mp + value, 0, GameConst.MAX_ROLE_MP);
-            StoryEngine.DisplayPopInfo(r.Name + "内力增加" + (r.MaxMp - v0));
+            StoryEngine.DisplayPopInfo(r.Name + "내력 증가" + (r.MaxMp - v0));
         }
         /// <summary>
         /// 加内力不提示
@@ -1187,7 +1188,7 @@ namespace Jyx2
         /// <param name="value"></param>
         public static void AddAttack(int roleId, int value)
         {
-            AddAttr(roleId, "Attack", value, "武力");
+            AddAttr(roleId, "Attack", value, "공격");
         }
         /// <summary>
         /// 增加最大生命
@@ -1201,7 +1202,7 @@ namespace Jyx2
             var v0 = r.MaxHp;
             r.MaxHp = Tools.Limit(v0 + value, 0, GameConst.MAX_ROLE_HP);
             r.Hp = Tools.Limit(r.Hp + value, 0, GameConst.MAX_ROLE_HP);
-            StoryEngine.DisplayPopInfo(r.Name + "生命增加" + (r.MaxHp - v0));
+            StoryEngine.DisplayPopInfo(r.Name + "생명 증가" + (r.MaxHp - v0));
         }
         /// <summary>
         /// 加生命不提示
@@ -1236,7 +1237,7 @@ namespace Jyx2
             var item = LuaToCsBridge.ItemTable[itemId];
             if (item == null)
             {
-                Debug.LogError("调用了未定义的物品:" + itemId);
+                Debug.LogError("정의되지 않은 항목 호출:" + itemId);
                 return;
             }
 
@@ -1251,7 +1252,7 @@ namespace Jyx2
                 //---------------------------------------------------------------------------
                 //特定位置的翻译【得到物品提示】
                 //---------------------------------------------------------------------------
-                stringBuilder.Append("失去物品：".GetContent(token));
+                stringBuilder.Append("물품제거：".GetContent(token));
                 //---------------------------------------------------------------------------
                 //---------------------------------------------------------------------------
             }
@@ -1262,7 +1263,7 @@ namespace Jyx2
                 //---------------------------------------------------------------------------
                 //特定位置的翻译【得到物品提示】
                 //---------------------------------------------------------------------------
-                stringBuilder.Append("得到物品：".GetContent(token));
+                stringBuilder.Append("물품획득：".GetContent(token));
                 //---------------------------------------------------------------------------
                 //---------------------------------------------------------------------------
             }
@@ -1285,7 +1286,7 @@ namespace Jyx2
             var item = LuaToCsBridge.ItemTable[itemId];
             if (item == null)
             {
-                Debug.LogError("调用了未定义的物品:" + itemId);
+                Debug.LogError("정의되지 않은 항목 호출:" + itemId);
                 return;
             }
 
@@ -1403,7 +1404,7 @@ namespace Jyx2
             {
                 if (!TryFindRole(roleId, out var role))
                     return;
-                StoryEngine.DisplayPopInfo(role.Name + "加入队伍！");
+                StoryEngine.DisplayPopInfo(role.Name + "일행합류！");
             }
         }
         /// <summary>
@@ -1433,7 +1434,7 @@ namespace Jyx2
             {
                 if (!TryFindRole(roleId, out var role))
                     return;
-                StoryEngine.DisplayPopInfo(role.Name + "离队。");
+                StoryEngine.DisplayPopInfo(role.Name + "탈퇴。");
             }
         }
         /// <summary>
@@ -1635,9 +1636,9 @@ namespace Jyx2
         /// <param name="interactiveEventId">交互事件ID</param>
         /// <param name="useItemEventId">使用道具事件ID</param>
         /// <param name="enterEventId">进入事件ID</param>
-        /// <param name="p7">开始贴图</param>
-        /// <param name="p8">结束贴图</param>
-        /// <param name="p9">起始贴图</param>
+        /// <param name="p7">开始贴图</param>맵 시작
+        /// <param name="p8">结束贴图</param>종료 맵
+        /// <param name="p9">起始贴图</param>시작 맵
         /// <param name="p10">动画延迟</param>
         /// <param name="p11">X坐标</param>
         /// <param name="p12">Y坐标</param>
@@ -2006,7 +2007,7 @@ namespace Jyx2
         {
             if (isQuickBattle)
             {
-                ShowYesOrNoSelectPanel("是否战斗胜利？", callback);
+                ShowYesOrNoSelectPanel("전투에서 승리하시겠습니까？", callback);//是否战斗胜利？
                 return;
             }
 
@@ -2143,36 +2144,36 @@ namespace Jyx2
         public static async UniTask FightForTopAsync()
         {
             Dictionary<int, string> heads = new Dictionary<int, string>();
-            heads.Add(8, "唐文亮来领教阁下的高招。");
-            heads.Add(21, "贫尼定闲愿领教阁下高招。");
-            heads.Add(23, "贫道天门领教阁下高招。");
-            heads.Add(31, "小兄弟，我们再来玩玩。");
-            heads.Add(32, "小兄弟，秃笔翁陪你玩玩。");
-            heads.Add(43, "白某愿领教阁下高招。");
-            heads.Add(7, "何太冲来领教阁下的高招。");
-            heads.Add(11, "杨逍技痒，和少侠玩玩。");
-            heads.Add(14, "韦一笑技痒，和少侠玩玩。");
-            heads.Add(20, "莫某再次领教阁下高招。");
-            heads.Add(33, "小兄弟，黑白子向你讨教。");
-            heads.Add(34, "小兄弟，黄钟公向你讨教。");
-            heads.Add(10, "范某技痒，和少侠玩玩。");
-            heads.Add(12, "老朽技痒，和少侠玩玩。");
-            heads.Add(19, "岳某不才，向少侠挑战。");
-            heads.Add(22, "左冷禅愿领教阁下高招。");
-            heads.Add(56, "黄蓉愿领教阁下高招。");
-            heads.Add(68, "丘处机领教阁下高招。");
-            heads.Add(13, "谢某技痒，和少侠玩玩。");
-            heads.Add(55, "郭靖愿领教阁下高招。");
-            heads.Add(62, "老夫领教少侠高招！");
-            heads.Add(67, "裘千仞来领教阁下的高招。");
-            heads.Add(70, "阿弥陀佛，贫僧愿向少侠挑战。");
-            heads.Add(71, "洪某拜教！");
-            heads.Add(26, "任某来领教阁下的高招。");
-            heads.Add(57, "少侠的确武功高强，我黄老邪来领教领教。");
-            heads.Add(60, "让我老毒物来会会你。");
-            heads.Add(64, "哇！你又学了这么多新奇的功夫。来，来，老顽童陪你玩玩。");
-            heads.Add(3, "苗某向少侠讨教。");
-            heads.Add(69, "不错不错，七公我来领教领教。");
+            heads.Add(8, "당문량이 당신에게 가르침을 청합니다.");
+            heads.Add(21, "빈니는 당신에게 가르침을 청합니다.");
+            heads.Add(23, "빈도 천문은 당신에게 가르침을 청합니다.");
+            heads.Add(31, "소협, 우리 다시 놀자.");
+            heads.Add(32, "소협, 대머리가 너와 함께 놀아줄게.");
+            heads.Add(43, "백모는 당신에게 가르침을 청합니다.");
+            heads.Add(7, "하태충이 당신에게 가르침을 청합니다.");
+            heads.Add(11, "양소요는 소협과 어울리고 싶어한다.");
+            heads.Add(14, "위일소는 소협과 어울리고 싶어한다.");
+            heads.Add(20, "모모는 당신에게 가르침을 청합니다.");
+            heads.Add(33, "소협, 흑백자가 당신에게 가르침을 청합니다.");
+            heads.Add(34, "소협, 황종공이 당신에게 가르침을 청합니다.");
+            heads.Add(10, "범모는  소협과 어울리고 싶어한다.");
+            heads.Add(12, "늙은 솜씨, 소협과 놀아요.");
+            heads.Add(19, "악모는 재능이 없어 당신에게 가르침을 청합니다.");
+            heads.Add(22, "좌냉선은 당신에게 가르침을 청합니다.");
+            heads.Add(56, "황용은 당신에게 가르침을 청합니다.");
+            heads.Add(68, "구처기는 당신에게 가르침을 청합니다.");
+            heads.Add(13, "사모는 기량이 근질근질하여 소협과 놀았다.");
+            heads.Add(55, "곽정원은 당신에게 가르침을 청합니다.");
+            heads.Add(62, "노부가 당신에게 가르침을 청합니다.");
+            heads.Add(67, "모천이 당신에게 가르침을 청합니다.");
+            heads.Add(70, "아미타불, 빈승은 소협에게 도전하기를 원한다.");
+            heads.Add(71, "홍모 배교!");
+            heads.Add(26, "임 모 씨가 당신에게 가르침을 청합니다.");
+            heads.Add(57, "소협은 확실히 무공이 뛰어나다. 나 황로사가 가르침을 받으러 왔다.");
+            heads.Add(60, "나의 오래된 독극물이 너를 만나러 오라.");
+            heads.Add(64, "와!너 또 이렇게 신기한 무공을 많이 배웠구나.자, 늙은 개구쟁이가 너와 함께 놀아줄게.");
+            heads.Add(3, "묘모는 소협에게 가르침을 청했다.");
+            heads.Add(69, "괜찮다, 괜찮다, 칠공은 내가 가르침을 받겠다.");
             var ran = new System.Random();
             var keys = heads.Keys.ToList();
             var values = heads.Values.ToList();
@@ -2196,27 +2197,27 @@ namespace Jyx2
                 }
                 if (i != 4)
                 {
-                    await TalkAsync(70, "少侠已连战三场，可先休息再战。", "talkname0", 0);
+                    await TalkAsync(70, "소협은 3번 연속으로 싸워서 싸우기 전에 쉴 수 있습니다。", "talkname0", 0);
                     RestFight();
                     await DarkSceneAsync();
                     await LightSceneAsync();
                 }
             }
 
-            await TalkAsync(0, "接下来换谁？", "talkname0", 1);
-            await TalkAsync(0, "…………", "talkname0", 1);
-            await TalkAsync(0, "没有人了吗？", "talkname0", 1);
-            await TalkAsync(70, "如果还没有人要出来向这位少侠挑战，那么这武功天下第一之名，武林盟主之位，就由这位少侠夺得。", "talkname0", 0);
-            await TalkAsync(70, "………………", "talkname0", 0);
-            await TalkAsync(70, "好，恭喜少侠，这武林盟主之位就由少侠获得，而这把“武林神杖”也由你保管。", "talkname0", 0);
-            await TalkAsync(12, "恭喜少侠！", "talkname0", 0);
-            await TalkAsync(64, "小兄弟，恭喜你！", "talkname0", 0);
-            await TalkAsync(19, "好，今年的武林大会到此已圆满结束，希望明年各位武林同道能再到我华山一游。", "talkname0", 0);
+            await TalkAsync(0,"다음은 누가 교체될까요？","talkname0", 1);
+            await TalkAsync(0,"…………","talkname0", 1);
+            await TalkAsync(0,"아무도 없나요？","talkname0", 1);
+            await TalkAsync(70,"이 청년에게 도전하는 사람이 아무도 없다면, 이 청년은 무술대회 우승자라는 칭호를 얻게 될 것입니다.","talkname0", 0);
+            await TalkAsync(70,"………………","talkname0", 0);
+            await TalkAsync(70,"자, 젊은 영웅에게 축하를, 무술대회의 우승자는 젊은 영웅이 얻었고, 이 “무림신장”도 보관한다.","talkname0", 0);
+            await TalkAsync(12,"축하합니다 소협！","talkname0", 0);
+            await TalkAsync(64,"소형제, 축하합니다！","talkname0", 0);
+            await TalkAsync(19,"자, 금년 무술대회가 성공적으로 마무리 되었으니 내년에도 모든 무술 동지들이 우리 화산을 방문할 수 있기를 바랍니다.","talkname0", 0);
             await DarkSceneAsync();
             jyx2_ReplaceSceneObject("", "NPC/华山弟子", "");
             jyx2_ReplaceSceneObject("", "NPC/battleNPC", "");
             await LightSceneAsync();
-            await TalkAsync(0, "历经千辛万苦，我终于打败群雄，得到这武林盟主之位及神杖。但是“圣堂”在哪呢？为什么没人告诉我，难道大家都不知道。这会儿又有的找了。", "talkname0", 1);
+            await TalkAsync(0, "이루 말할 수 없는 고난 끝에 마침내 고수들을 무찌르고 무술대회의 수장이자 신권의 자리를 손에 넣었다. 그러나 “신전”은 어디에 있습니까？ 왜 아무도 나에게 말하지 않았는지, 모두가 알고 있지는 않습니다. 지금 다시 찾았습니다.", "talkname0", 1);
             AddItem(143, 1);
         }
         ///进黑龙潭--by citydream

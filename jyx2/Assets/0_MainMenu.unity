@@ -258,10 +258,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: ec9bdfee05230034fa44589565804c52, type: 3}
-    m_FontSize: 50
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 5
+    m_MinSize: 3
     m_MaxSize: 50
     m_Alignment: 8
     m_AlignByGeometry: 0
@@ -269,7 +269,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u6E38\u620F\u6B63\u5728\u52A0\u8F7D\u4E2D..."
+  m_Text: "\uAC8C\uC784\uC744 \uB85C\uB4DC\uD558\uB294 \uC911..."
 --- !u!222 &121497934
 CanvasRenderer:
   m_ObjectHideFlags: 0

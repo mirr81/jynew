@@ -1,11 +1,11 @@
-Talk(21, "我觉得这句“银鞍照白马”和“飒沓如流星”连在一起方为正解……", "talkname21", 0);
+Talk(21, "내 생각에 \"은안조백마\" 와 \"조답여유성\"은 엮어서 보는 것이 바른 해석이라 같네…", "talkname21", 0);
 if InTeam(38) == true then goto label0 end;
     do return end;
 ::label0::
     -- DarkScence();
     -- jyx2_ReplaceSceneObject("", "NPC/shipotian1", "1");--石破天出现
     -- LightScence();
-    Talk(38, "大哥，这马下的云气，好像一团团云雾在不断的向前推涌……", "talkname38", 1);
+    Talk(38, "형님， 말을 둘러싼 안개가 끝없이 펼쳐지고 있어요…", "talkname38", 1);
     Add3EventNum(-2, 4, 0, 0, 1);
     Add3EventNum(-2, 5, 0, 0, 1);
     Add3EventNum(-2, 6, 0, 0, 1);

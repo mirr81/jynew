@@ -1,2 +1,2 @@
-Talk(39, "公子，请速速离去。", "talkname39", 0);
+Talk(39, "공자， 어서 떠나게나。", "talkname39", 0);
 do return end;

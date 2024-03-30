@@ -1,10 +1,10 @@
-Talk(0, "“葵花宝典”一书，不知任教主能否借在下一看。", "talkname0", 1);
-Talk(26, "不行，此书乃是本教镇教之宝，不得借于外人。小兄弟，这太监练的武功，我看你就别想学了，别太贪心，走上“邪路”了。", "talkname26", 0);
+Talk(0, "규화보전을 빌려주실 수 있습니까？", "talkname0", 1);
+Talk(26, "안돼！ 본교의 보물인지라 외부인에게는 줄 수 없다！ 거세를 하는 무공을 배워서 뭐 하겠나？ 욕심이 화를 부르는 법일세。", "talkname26", 0);
 if AskBattle() == true then goto label0 end;
-    Talk(0, "教主说的是。", "talkname0", 1);
+    Talk(0, "그 말은…", "talkname0", 1);
     do return end;
 ::label0::
-    Talk(0, "任教主不肯借看，就别怪在下不客气了。", "talkname0", 1);
+    Talk(0, "거절하신다면 억지로 뺏어보겠습니다！", "talkname0", 1);
     if TryBattle(55) == true then goto label1 end;
         Dead();
         do return end;

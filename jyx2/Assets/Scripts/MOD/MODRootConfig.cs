@@ -19,40 +19,40 @@ public class MODRootConfig : ScriptableObject
 {
     [LabelText("MOD ID（全局唯一）")] public string ModId;
 
-    [LabelText("是否原生MOD（随打包一起发布）")] public bool IsNativeMod = false;
-    [Multiline][LabelText("MOD简介")] public string Desc;
-    [LabelText("MOD版本号")] public string Version;
-    [LabelText("MOD名称")] public string ModName;
-    [LabelText("游戏MOD的根目录")] public string ModRootDir;
-    [LabelText("游戏作者名")] public string Author;
+    [LabelText("기본 MOD여부（随打包一起发布）")] public bool IsNativeMod = false;
+    [Multiline][LabelText("MOD 소개")] public string Desc;
+    [LabelText("MOD 버전")] public string Version;
+    [LabelText("MOD 이름")] public string ModName;
+    [LabelText("MOD Root폴더")] public string ModRootDir;
+    [LabelText("저작자")] public string Author;
 
-    [LabelText("LUA文件名配置")] public string LuaFilePatten = "ka{0}";
+    [LabelText("LUA파일 패턴")] public string LuaFilePatten = "ka{0}";
 
-    [LabelText("MOD存档版本号")] public int ModArchiveVersion = 0;
+    [LabelText("MOD 아카이브 버전")] public int ModArchiveVersion = 0;
 
-    [LabelText("主角姓名")] public string PlayerName;
+    [LabelText("주인공 이름")] public string PlayerName;
 
-    [LabelText("预加载的lua文件（比如热更新）")] public List<string> PreloadedLua;
+    [LabelText("미리 로드된 lua 파일（比如热更新）")] public List<string> PreloadedLua;
 
-    [LabelText("只允许大地图存档")] public bool EnableSaveBigMapOnly = true;
-    [LabelText("只允许大地图离队")] public bool EnableKickTeammateBigMapOnly = true;
-    [LabelText("只允许自动战斗")] public bool AutoBattleOnly = false;
-    [LabelText("默认战斗倍速")] public float BattleTimeScale = 1f;
-    [LabelText("战斗中显示招式名字")] public bool ShowSkillNameInBattle = false;
-    [LabelText("是否打开控制台")] public bool IsConsoleEnable = true;
-    [LabelText("在哪些难度中禁止使用控制台")] public List<Jyx2_GameDifficulty> ConsoleDisableDifficulty;
-    [LabelText("战斗中是否播放使用道具动作")] public bool IsPlayUseItemAnimation = true;
+    [LabelText("대지도에서만 저장 가능")] public bool EnableSaveBigMapOnly = true;
+    [LabelText("대지도에서만 이탈 가능")] public bool EnableKickTeammateBigMapOnly = true;
+    [LabelText("자동 전투만 허용")] public bool AutoBattleOnly = false;
+    [LabelText("기본 전투 배속")] public float BattleTimeScale = 1f;
+    [LabelText("전투 중 무공 이름 보이기")] public bool ShowSkillNameInBattle = false;
+    [LabelText("콘솔 열기 여부")] public bool IsConsoleEnable = true;
+    [LabelText("콘솔 사용을 금지하는 난이도")] public List<Jyx2_GameDifficulty> ConsoleDisableDifficulty;
+    [LabelText("전투 중 아이템 사용 동작 재생 여부")] public bool IsPlayUseItemAnimation = true;
 
-    [InfoBox("某些角色名与人物ID不严格对应，在此修正。用于对话中正确显示名字")] [BoxGroup("对话人物ID修正")] [TableList] 
+    [InfoBox("일부 캐릭터 이름은 캐릭터 ID와 엄격하게 대응하지 않아 여기서 수정합니다. 대화에 이름 올바르게 보이기")] [BoxGroup("대화인물ID수정")] [TableList] 
     [HideLabel]
     public List<StoryIdNameFix> StoryIdNameFixes;
     
     
-    [LabelText("俯视相机偏移（近，为0使用全局设置）")]public Vector3 CameraOffsetNear = Vector3.zero;
-    [LabelText("俯视相机偏移（远，为0使用全局设置）")]public Vector3 CameraOffsetFar = Vector3.zero;
+    [LabelText("카메라오프셋（근거리，为0使用全局设置）")]public Vector3 CameraOffsetNear = Vector3.zero;
+    [LabelText("카메라오프셋（원거리，为0使用全局设置）")]public Vector3 CameraOffsetFar = Vector3.zero;
 
 #if UNITY_EDITOR
-    [Button("生成配置表")]
+    [Button("구성 테이블 생성")]
     public void GenerateConfigs()
     {
         // 生成Lua配置表

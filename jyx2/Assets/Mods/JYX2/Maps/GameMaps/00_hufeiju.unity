@@ -6103,7 +6103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TransportTriggerName: 
   ExtraCommand: 
-  ButtonText: "\u79BB\u5F00"
+  ButtonText: "\uB5A0\uB098\uAE30"
   m_EventTargets: []
 --- !u!65 &548203717
 BoxCollider:

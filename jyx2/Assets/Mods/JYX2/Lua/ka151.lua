@@ -1,2 +1,2 @@
-Talk(77, "可恶的魔教妖邪，要杀要剐就来。", "talkname77", 0);
+Talk(77, "간악한 마교놈！ 어서 덤벼라！", "talkname77", 0);
 do return end;

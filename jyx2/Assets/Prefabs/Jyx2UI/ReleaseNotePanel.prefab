@@ -193,7 +193,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u66F4\u65B0\u65E5\u5FD7"
+  m_Text: "\uB9B4\uB9AC\uC988 \uB178\uD2B8"
 --- !u!114 &4279767948395284140
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -481,7 +481,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u5173\u95ED"
+  m_Text: "\uB2EB\uAE30"
 --- !u!114 &1140827141425765506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -905,7 +905,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 6903534986291766972}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.63438874
+  m_Size: 0.015446428
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

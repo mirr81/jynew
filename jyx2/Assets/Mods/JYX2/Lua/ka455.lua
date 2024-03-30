@@ -1,9 +1,9 @@
-Talk(95, "很抱歉，敝教丘掌门现正闭关中，重阳宫恕不接客。", "talkname95", 0);
+Talk(95, "구장문께선 폐관 중이시라 현재 중양궁은 손님을 접대하지 않소。", "talkname95", 0);
 if AskBattle() == true then goto label0 end;
-    Talk(0, "真是不巧，那只好改天再登门拜访了。", "talkname0", 1);
+    Talk(0, "할 수 없군。 다음에 다시 찾아오겠소。", "talkname0", 1);
     do return end;
 ::label0::
-    Talk(0, "那只好得罪了，因为里面搞不好有我要的东西。", "talkname0", 1);
+    Talk(0, "원하는 물건을 얻기 위해 무례를 범할 수밖에。", "talkname0", 1);
     if TryBattle(73) == true then goto label1 end;
         Dead();
         do return end;

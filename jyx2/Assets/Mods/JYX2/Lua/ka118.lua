@@ -1,2 +1,2 @@
-Talk(12, "小兄弟，一路顺风。", "talkname12", 0);
+Talk(12, "소형제， 잘 가게。", "talkname12", 0);
 do return end;

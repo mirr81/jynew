@@ -2,6 +2,6 @@ if UseItem(186) == true then goto label0 end;
     do return end;
 ::label0::
     AddItemWithoutHint(186, -1);
-    Talk(73, "江湖上有几个恩怨的背后是常人所料想不到的。例如苗、胡二家的恩怨。苗人凤与胡一刀生前本是惺惺相惜的好汉，无奈胡一刀死后，他的儿子却视苗人凤为第一杀父仇人。有空时你可去为他们排解。", "talkname73", 0);
+    Talk(73, "강호에 숱한 원한은 오해로 인해 발생하지。 묘， 호 일가의 원한은… 묘인봉과 호일도는 지기였으나， 호일도가 죽은 뒤 그의 아들은 묘인봉을 원수로 알고 있다。 네가 원한을 풀어주거라。", "talkname73", 0);
     Add3EventNum(-2, 0, 0, 1, -1)
 do return end;

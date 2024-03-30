@@ -1,6 +1,6 @@
-Talk(29, "怎么，还想杀我吗？还是想跟我学几招对付女人呀？", "talkname29", 0);
+Talk(29, "날 정말 죽일 건가？ 아니면 여자를 황홀하게 만들 비기를 배울 텐가？", "talkname29", 0);
 if AskBattle() == false then goto label0 end;
-    Talk(0, "你这采花淫贼，死到临头还不觉悟。你受死吧！", "talkname0", 1);
+    Talk(0, "못 된 음적아！ 잘못을 모른다니 날 원망하지 마라！", "talkname0", 1);
     if TryBattle(53) == true then goto label1 end;
         Dead();
         do return end;
@@ -14,9 +14,9 @@ if AskBattle() == false then goto label0 end;
         do return end;
 ::label0::
         if AskJoin () == false then goto label2 end;
-            Talk(0, "这可是你说的，我们就一起走吧，到时可得传授小弟几招。", "talkname0", 1);
+            Talk(0, "괜찮은 제안인데？ 사부를 따라갈 테니 비기를 꼭 전수해 줘！", "talkname0", 1);
             if TeamIsFull() == false then goto label3 end;
-                Talk(29, "你的队伍已满，我无法加入。", "talkname29", 0);
+                Talk(29, "형제는 동료가 많으니 나는 혼자 예쁜이들과 놀겠네。", "talkname29", 0);
                 do return end;
 ::label3::
                 DarkScence();
@@ -28,5 +28,5 @@ if AskBattle() == false then goto label0 end;
                 AddEthics(-6);
                 do return end;
 ::label2::
-                Talk(0, "你们俩的事，我不想管。", "talkname0", 1);
+                Talk(0, "너희 두 사람의 일에 난 관여하지 않겠어。", "talkname0", 1);
 do return end;

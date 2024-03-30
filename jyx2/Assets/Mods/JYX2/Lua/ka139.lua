@@ -1,10 +1,10 @@
-Talk(7, "没事就快走吧，别在此逗留。", "talkname7", 0);
+Talk(7, "어서 떠나는 게 좋을 거야！", "talkname7", 0);
 if AskBattle() == true then goto label0 end;
     do return end;
 ::label0::
-    Talk(0, "在下想请何掌门放过那位可怜的大夫，何况那女人长得这么丑，不要也罢。", "talkname0", 1);
-    Talk(7, "你说什么！", "talkname7", 0);
-    Talk(0, "糟了，说溜了嘴。", "talkname0", 1);
+    Talk(0, "하 장문에게 의원을 살려달라고 말해야지。 의원이 죽는 것보다 저런 추녀가 죽는게 더 낫잖아？", "talkname0", 1);
+    Talk(7, "뭐라고？", "talkname7", 0);
+    Talk(0, "앗！ 들렸나요？ 죄송…", "talkname0", 1);
     if TryBattle(18) == true then goto label1 end;
         Dead();
         do return end;

@@ -30,7 +30,7 @@ namespace Jyx2.MOD.Editor
         }
 
         [BoxGroup("新建MOD")]
-        [LabelText("MOD名称")] public string ModId = "输入新建的MOD ID";
+        [LabelText("MOD이름")] public string ModId = "输入新建的MOD ID";
         
         [BoxGroup("新建MOD")]
         [Button("新建MOD")]
@@ -116,7 +116,7 @@ namespace Jyx2.MOD.Editor
 
         [BoxGroup("MOD编辑")]
         [InfoBox("下列功能待实现，敬请期待\n引用依赖检查：OK\n发布待解决：无")]
-        [LabelText("当前正在编辑MOD")]
+        [LabelText("현재 MOD 편집 중")]
         public MODRootConfig CurrentMod;
 
         

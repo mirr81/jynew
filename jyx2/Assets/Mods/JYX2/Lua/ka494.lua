@@ -1,12 +1,12 @@
-Talk(51, "阁下考虑的怎么样，要不要我加入你，让你能轻易获得《天龙八部》？", "talkname51", 0);
+Talk(51, "잘 생각해 봤나？ 나와 손을 잡고 쉬운 방법으로 \"천룡팔부\"를 얻겠나？", "talkname51", 0);
 if AskJoin () == true then goto label0 end;
-    Talk(0, "慕容公子的“好”意，在下心领了。在下对自己的武功还有一点自信，我宁愿光明正大的与乔大侠打斗，也不愿用卑鄙的方法去得到那本《天龙八部》。", "talkname0", 1);
-    Talk(51, "你再考虑清楚。", "talkname51", 0);
+    Talk(0, "공자의 뜻은 고맙소만 난 내 힘으로 정정당당하게 교봉과 무공을 겨루겠소。 비겁한 수단으로 \"천룡팔부\"를 얻고 싶은 마음은 없다。", "talkname0", 1);
+    Talk(51, "다시 생각해 봐。", "talkname51", 0);
     do return end;
 ::label0::
-    Talk(0, "好，我就和你上少林，揭发乔峰的秘密。", "talkname0", 1);
+    Talk(0, "좋다。 함께 소림사에 가서 교봉의 비밀을 벗기자。", "talkname0", 1);
     if TeamIsFull() == false then goto label1 end;
-        Talk(51, "你的队伍已满，我无法加入。", "talkname51", 0);
+        Talk(51, "일행이 많으니 다음에 합류하겠다。", "talkname51", 0);
         do return end;
 ::label1::
         DarkScence();

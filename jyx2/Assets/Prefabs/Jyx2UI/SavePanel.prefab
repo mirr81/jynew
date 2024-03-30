@@ -81,7 +81,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u9009\u62E9\u5B58\u6863\u4F4D"
+  m_Text: "\uC800\uC7A5\uC704\uCE58\uC120\uD0DD"
 --- !u!114 &1010155651761925387
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -324,7 +324,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u5BFC\u5165\u5B58\u6863"
+  m_Text: "\uBD88\uB7EC\uC624\uAE30"
 --- !u!114 &2202386889832594752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -416,7 +416,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u5BFC\u51FA\u5B58\u6863"
+  m_Text: "\uC800\uC7A5\uD558\uAE30"
 --- !u!114 &1979039097558961197
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1389,6 +1389,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TopbarUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 6163181798029134051, guid: 9ac7a2af92d183d4eb67c84ead7ac3db,
+        type: 3}
+      propertyPath: m_Text
+      value: "\uB4A4\uB85C"
       objectReference: {fileID: 0}
     - target: {fileID: 6876701695403819971, guid: 9ac7a2af92d183d4eb67c84ead7ac3db,
         type: 3}

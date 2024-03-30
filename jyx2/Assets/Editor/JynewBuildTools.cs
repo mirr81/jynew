@@ -27,17 +27,17 @@ namespace Editor
     /// </summary>
     public static class JynewBuildTools
     {
-        [MenuItem("一键打包/Windows64")]
+        [MenuItem("Packaging/Windows64")]
         private static void BuildWindows()
         {
             new JynewBuilder().Build(BuildTarget.StandaloneWindows64, "windowsbuild", "wuxia_launch.exe");
         }
-        [MenuItem("一键打包/Windows64 Dev", false, 2000)]
+        [MenuItem("Packaging/Windows64 Dev", false, 2000)]
         private static void BuildWindowsDev()
         {
             new JynewBuilder().Build(BuildTarget.StandaloneWindows64, "windowsbuild", "wuxia_launch.exe", BuildOptions.Development | BuildOptions.AllowDebugging);
         }
-        [MenuItem("一键打包/Android")]
+        [MenuItem("Packaging/Android")]
         private static void BuildAndroid()
         {
             string currentDate = DateTime.Now.ToString("yyyyMMdd");
@@ -48,7 +48,7 @@ namespace Editor
             new JynewBuilder().Build(BuildTarget.Android, "", apkName);
         }
         
-        [MenuItem("一键打包/TapTap Android")]
+        [MenuItem("Packaging/TapTap Android")]
         private static void BuildTapTapAndroid()
         {
             var currentDate = DateTime.Now.ToString("yyyyMMdd");
@@ -191,7 +191,7 @@ namespace Editor
             PlayerSettings.SplashScreen.logos = newLogos;
         }
         
-        [MenuItem("一键打包/Android Dev", false, 2000)]
+        [MenuItem("Packaging/Android Dev", false, 2000)]
         private static void BuildAndroidDev()
         {
             string currentDate = DateTime.Now.ToString("yyyyMMdd");
@@ -202,7 +202,7 @@ namespace Editor
             new JynewBuilder().Build(BuildTarget.Android, "", apkName, BuildOptions.Development);
         }
 
-        [MenuItem("一键打包/MacOS")]
+        [MenuItem("Packaging/MacOS")]
         private static void BuildMac()
         {
 #if UNITY_STANDALONE_OSX
@@ -214,7 +214,7 @@ namespace Editor
             new JynewBuilder().Build(BuildTarget.StandaloneOSX, "", outputName);
         }
         
-        [MenuItem("一键打包/MacOS Dev", false, 2000)]
+        [MenuItem("Packaging/MacOS Dev", false, 2000)]
         private static void BuildMacDev()
         {
 #if UNITY_STANDALONE_OSX
@@ -226,25 +226,25 @@ namespace Editor
             new JynewBuilder().Build(BuildTarget.StandaloneOSX, "", outputName, BuildOptions.Development);
         }
         
-        [MenuItem("一键打包/iOS")]
+        [MenuItem("Packaging/iOS")]
         private static void BuildIOS()
         {
             new JynewBuilder().Build(BuildTarget.iOS, "iOSBuild", "");
         }
         
-        [MenuItem("一键打包/iOS Dev", false, 2000)]
+        [MenuItem("Packaging/iOS Dev", false, 2000)]
         private static void BuildIOSDev()
         {
             new JynewBuilder().Build(BuildTarget.iOS, "iOSBuild", "", BuildOptions.Development);
         }
         
-        [MenuItem("一键打包/Linux")]
+        [MenuItem("Packaging/Linux")]
         private static void BuildLinux()
         {
             new JynewBuilder().Build(BuildTarget.StandaloneLinux64, "LinuxBuild", "");
         }
         
-        [MenuItem("一键打包/Linux Dev", false, 2000)]
+        [MenuItem("Packaging/Linux Dev", false, 2000)]
         private static void BuildLinuxDev()
         {
             new JynewBuilder().Build(BuildTarget.StandaloneLinux64, "LinuxBuild", "", BuildOptions.Development);

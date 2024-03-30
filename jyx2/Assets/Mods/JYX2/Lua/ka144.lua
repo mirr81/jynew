@@ -1,2 +1,2 @@
-Talk(6, "快快离去，免得我动手杀你。", "talkname6", 0);
+Talk(6, "살고 싶으면 어서 떠나라！", "talkname6", 0);
 do return end;
