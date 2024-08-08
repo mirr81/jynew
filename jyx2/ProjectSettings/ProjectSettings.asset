@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: jynew
-  productName: "\u7FA4\u4FA0\u4F20\u542F\u52A8"
+  productName: "\uAE40\uC6A9\uAD70\uD611\uC804"
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0, g: 0, b: 0, a: 1}
@@ -134,7 +134,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 20230510
+  bundleVersion: 20240809
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -808,7 +808,7 @@ PlayerSettings:
   gcWBarrierValidation: 0
   apiCompatibilityLevelPerPlatform:
     Android: 6
-    Standalone: 6
+    Standalone: 3
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
   metroPackageName: Template2D

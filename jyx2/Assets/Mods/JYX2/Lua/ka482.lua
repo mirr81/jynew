@@ -9,6 +9,7 @@ if (ret) then
     y = 5.328
     z = GetRandomPos(229.66)
     jyx2_ReplaceSceneObject("1000", "Encounter/Quest/"..GetDiffString(quest.id), "quest:"..x..","..y..","..z);
+    ShowToast("위치:"..z.." , "..x);
 end
 do return end
 

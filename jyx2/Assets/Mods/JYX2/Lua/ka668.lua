@@ -9,6 +9,7 @@ if (ret) then
     z = GetRandomPos(337.66)
     --ModifyEvent(-2, 10001, -2, -2, 10001, -2, -2, -2, -2, -2, -2, -2, -2);
     jyx2_ReplaceSceneObject("1000", "Encounter/Quest/"..GetDiffString(quest.id), "quest:"..x..","..y..","..z);
+    ShowToast("위치:"..z.." , "..x);
 end
 do return end
 

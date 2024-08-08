@@ -185,7 +185,7 @@ function damage.GetSkillResult(r1, r2, skill, blockVector)
 
         --7、如果伤害仍然 < 0 则    伤害 ＝ 0       7. 여전히 피해가 0 미만인 경우 피해 = 0
         if (v <= 0) then
-            v = 0;
+            v = 1;
         else
             --8、if  伤害 > 0 then      8. 피해가 0보다 크면
             --    伤害＝ 伤害 ＋ 我方体力/15  ＋ 敌人受伤点数/ 20
@@ -219,7 +219,28 @@ function damage.GetSkillResult(r1, r2, skill, blockVector)
             v = 1;
         end
 
-        rst.damage = v;
+        local wpoison = r1:GetWeaponProperty("ChangePoisonLevel");
+
+        -- 상대방과의 경공 차이로 히트율 결정.
+        local qing = r1.Qinggong - r2.Qinggong;
+        local hitrate;
+
+        -- 50 이상 차이 날 경우 미스 확률 약 30퍼센트 그 외에는 10퍼센트 확률로 미스
+        -- 경공 수치 상관 없이 전체 미스율 대략 20퍼센트 설정.
+        -- 미스율 = ( 6/2 + 21 / 2 )  / 2
+        if qing < -50 then
+            hitrate = math.random(0, 5);
+        else
+            hitrate = math.random(0, 20);
+        end
+
+        if hitrate < 2 then
+            rst.damage = 0;
+        else
+            rst.damage = v;
+        end
+
+        --CS.GameUtil.DisplayPopinfo(" 명중률:"..hitrate.." 경공차: "..qing);
 
         --敌人受伤程度  적의 부상 정도
         rst.hurt = v // 10;
@@ -232,10 +253,12 @@ function damage.GetSkillResult(r1, r2, skill, blockVector)
         --敌人中毒=敌人已中毒＋ 中毒程度/15                     중독된 적 = 중독된 적 + 중독 레벨/15
         --if 敌人中毒> 100 then 敌人中毒 ＝100                 적 중독 > 100이면 적 중독 = 100
         --if 敌人中毒<0 then 敌人中毒=0                        적 중독 < 0이면 적 중독 = 0
-        if (r2.AntiPoison <= add and r2.AntiPoison <= 90) then
+        -- if 독성무기 가 있다면, 독성값 추가.
 
+        if (r2.AntiPoison <= add and r2.AntiPoison <= 90) then
             local poison = CS.Jyx2.Middleware.Tools.Limit(add // 15, 0, CS.GameConst.MAX_ROLE_ATK_POISON);
-            rst.poison = poison;
+            rst.poison = poison + wpoison;
+            --CS.GameUtil.DisplayPopinfo("중독치: "..rst.poison);
         end
 
         return rst;
